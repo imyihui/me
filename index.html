@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yihui Zhu — Author Designer</title>
+<link rel="icon" href="yihuizhu-portfolio/assets/images/favicon/yihui-favicon.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Noto+Serif+SC:wght@300;400&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cr:#FAF9F7;--tl:#009797;--gy:#1a1a1a;--md:#404040;--dm:#666;--ln:#DEDAD4;
+  --sf:"Cormorant Garamond",Georgia,serif;--ss:"DM Sans",sans-serif;--sb:210px}
+html,body{height:100%;overflow:hidden}
+body{background:var(--cr);color:var(--gy);font-family:var(--ss);font-weight:300;font-size:14.5px;line-height:1.7;cursor:none;display:flex}
+/* BILINGUAL — .h hidden by default; body.zh shows .h, hides .e */
+.h{display:none}
+body.zh .e{display:none}
+body.zh .h{display:inline}
+body.zh .h.blk{display:block}
+/* WenQuanYi for Chinese italic text */
+body.zh .sf-tx{font-family:"WenQuanYi Zen Hei","WenQuanYi Micro Hei","WenQuanYi Zen Hei Sharp","Noto Serif SC",serif;font-size:.94em}
+/* CURSOR */
+#cur{position:fixed;width:5px;height:5px;background:var(--tl);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .12s}
+#crn{position:fixed;width:24px;height:24px;border:1.5px solid var(--tl);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.35;transition:width .3s,height .3s,opacity .3s}
+.hov #cur{transform:translate(-50%,-50%) scale(2.5);background:transparent;opacity:.6}
+.hov #crn{width:40px;height:40px;opacity:.12}
+/* SIDEBAR */
+#sb{position:fixed;top:0;left:0;bottom:0;width:var(--sb);background:rgba(250,249,247,.97);border-right:1px solid var(--ln);z-index:200;display:flex;flex-direction:column;padding:32px 24px 34px}
+.nlogo{display:flex;flex-shrink:0;margin-bottom:30px;text-decoration:none}
+.nlogo img{height:90px;width:auto;display:block;transition:opacity .3s}
+.nlogo:hover img{opacity:.5}
+.nlist{list-style:none;display:flex;flex-direction:column;flex:1}
+.nl{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dm);text-decoration:none;padding:9px 0;position:relative;transition:color .25s}
+.nl::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--tl);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.nl:hover{color:var(--tl)}
+.nl.act::after{transform:scaleX(1)}
+.nl.act{color:var(--tl)}
+.nsep{height:1px;background:var(--ln);margin:14px 0}
+.lbtn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ln);padding:7px 13px;font-family:var(--ss);font-size:9px;letter-spacing:.14em;color:var(--dm);cursor:none;background:none;transition:border-color .2s,color .2s,background .2s}
+.lbtn:hover{border-color:var(--tl);color:var(--tl);background:rgba(0,151,151,.04)}
+.ldot{width:5px;height:5px;border-radius:50%;background:var(--tl);opacity:.5;flex-shrink:0}
+/* MAIN */
+#main{margin-left:var(--sb);width:calc(100% - var(--sb));height:100vh;overflow-y:scroll;overflow-x:hidden}
+/* HERO */
+@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gr{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+#hero{height:100vh;position:relative;overflow:hidden;display:grid;grid-template-columns:52% 48%;background:linear-gradient(152deg,#FAF9F7 0%,#ceeaea 36%,#5bbaba 66%,#008080 100%)}
+#hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 12%,rgba(0,151,151,.13) 0%,transparent 52%);pointer-events:none}
+.hl{position:relative;display:flex;align-items:center;justify-content:center}
+.wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--sf),"WenQuanYi Zen Hei","WenQuanYi Micro Hei","WenQuanYi Zen Hei Sharp","Noto Serif SC",serif;font-size:clamp(70px,12vw,190px);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(0,120,120,.15);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;opacity:0;animation:fU 1.4s .1s forwards}
+.hr{display:flex;flex-direction:column;justify-content:center;padding:64px 60px 72px 36px;position:relative;z-index:1;background:linear-gradient(to right,transparent 0%,rgba(250,249,247,.55) 100%)}
+.hey{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(0,85,85,.8);margin-bottom:20px;opacity:0;animation:fU .9s .4s forwards}
+.hnm{font-family:var(--sf);font-size:clamp(52px,6.8vw,96px);font-weight:300;line-height:.93;letter-spacing:-.02em;color:var(--gy);opacity:0;animation:fU .9s .6s forwards;text-shadow:0 1px 20px rgba(0,0,0,.06)}
+.hnm em{font-style:italic;color:var(--tl)}
+body.zh .hnm{font-family:"Noto Serif SC",serif}
+.htg{margin-top:15px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(15,60,60,.78);opacity:0;animation:fU .9s .8s forwards}
+.hin{margin-top:22px;font-family:var(--sf);font-size:16px;font-weight:300;line-height:1.72;color:rgba(15,40,40,.82);max-width:390px;font-style:italic;opacity:0;animation:fU .9s 1.0s forwards}
+body.zh .hin{font-family:"WenQuanYi Zen Hei","WenQuanYi Micro Hei","WenQuanYi Zen Hei Sharp","Noto Serif SC",serif;font-size:15px}
+.hsc{margin-top:32px;display:flex;align-items:center;gap:11px;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,85,85,.55);opacity:0;animation:fU .9s 1.25s forwards}
+.hsl{width:34px;height:1px;background:rgba(0,120,120,.38);transform-origin:left;transform:scaleX(0);animation:gr 1s 1.5s forwards}
+/* SECTION */
+.sband{padding:32px 48px 28px;border-bottom:1px solid var(--ln);background:rgba(0,151,151,.025)}
+.sband-t{font-family:var(--sf);font-size:15px;font-style:italic;line-height:1.74;color:var(--md);max-width:700px}
+.cath{padding:44px 48px 32px;border-bottom:1px solid var(--ln);display:flex;flex-direction:column;gap:6px}
+.cat-ey{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--tl)}
+.cat-ti{font-family:var(--sf);font-size:clamp(34px,4.8vw,64px);font-weight:300;line-height:1;letter-spacing:-.02em}
+.cat-ti em{font-style:italic;color:var(--tl)}
+.cat-ct{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--md);margin-top:4px}
+/* CARDS */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ln)}
+.card{background:var(--cr);cursor:none;overflow:hidden;position:relative}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,151,151,.04),transparent);opacity:0;transition:opacity .4s;z-index:1;pointer-events:none}
+.card:hover::before{opacity:1}
+.cimg{width:100%;padding-bottom:58%;position:relative;overflow:hidden;background:rgba(0,151,151,.05)}
+.cimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1),filter .4s;filter:grayscale(8%)}
+.card:hover .cimg img{transform:scale(1.05);filter:grayscale(0%)}
+.card-ph{background:var(--cr)}
+.cph{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:rgba(0,151,151,.05)}
+.cph span{font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dm)}
+.cinf{padding:16px 20px 22px}
+.ctop{display:flex;justify-content:space-between;margin-bottom:7px}
+.cnum{font-family:var(--sf);font-size:10.5px;color:var(--dm);transition:color .25s}
+.card:hover .cnum{color:var(--tl)}
+.carr{font-size:13px;color:var(--dm);transition:color .25s,transform .3s}
+.card:hover .carr{color:var(--tl);transform:translateX(4px)}
+.ctit{font-family:var(--sf);font-size:clamp(15px,1.6vw,22px);font-weight:300;line-height:1.15;letter-spacing:-.01em;color:var(--gy);margin-bottom:5px;transition:color .25s}
+.card:hover .ctit{color:var(--tl)}
+.csub{font-size:11.5px;color:var(--md);line-height:1.5;margin-bottom:10px}
+.ctags{display:flex;gap:5px;flex-wrap:wrap}
+.ctag{font-size:9px;letter-spacing:.08em;color:var(--md);border:1px solid rgba(0,0,0,.16);background:rgba(0,0,0,.035);padding:2px 7px}
+.secft{border-top:1px solid var(--ln);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--dm);letter-spacing:.06em}
+.ftsig{font-family:var(--sf);font-size:11.5px;color:var(--md)}
+.ftsig em{color:var(--tl);font-style:italic}
+/* POPUP */
+.pov{position:fixed;inset:0;z-index:500;background:rgba(20,20,20,0);pointer-events:none;transition:background .4s}
+.pov.on{background:rgba(20,20,20,.5);pointer-events:all}
+.pp{position:fixed;top:0;right:0;bottom:0;width:min(780px,96vw);background:var(--cr);z-index:501;transform:translateX(100%);transition:transform .5s cubic-bezier(.22,1,.36,1);overflow-y:auto}
+.pp.on{transform:translateX(0)}
+.pptop{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:15px 38px;background:rgba(250,249,247,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
+.ppnum{font-family:var(--sf);font-size:11px;color:var(--tl)}
+.ppx{background:none;border:1px solid var(--ln);width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--md);cursor:none;transition:border-color .2s,color .2s}
+.ppx:hover{border-color:var(--tl);color:var(--tl)}
+.pphi{width:100%;overflow:hidden}
+.pphi img{width:100%;height:auto;display:block}
+.pphiph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:rgba(0,151,151,.05)}
+.pphiph span{font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dm)}
+.ppbd{padding:32px 38px 60px}
+.ppmt{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.ppyr{font-family:var(--sf);font-size:11.5px;color:var(--tl)}
+.pprl{font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--md)}
+.ppti{font-family:var(--sf);font-size:clamp(22px,3vw,38px);font-weight:300;line-height:1.08;letter-spacing:-.01em;color:var(--gy);margin-bottom:6px}
+.ppsu{font-family:var(--sf);font-size:13.5px;font-style:italic;color:var(--md);margin-bottom:14px}
+.pptgs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:22px}
+.pptg{font-size:9px;letter-spacing:.08em;color:var(--md);border:1px solid rgba(0,0,0,.16);background:rgba(0,0,0,.035);padding:2px 8px}
+.ppin{font-family:var(--sf);font-size:15px;font-style:italic;line-height:1.74;color:var(--md);border-left:2px solid var(--tl);padding-left:17px;margin-bottom:22px}
+.ppde{font-size:13.5px;line-height:1.9;color:var(--md);margin-bottom:32px;max-width:560px}
+.ppil{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--tl);margin-bottom:11px;display:flex;align-items:center;gap:11px}
+.ppil::after{content:"";flex:1;height:1px;background:var(--ln)}
+.ppig{display:flex;flex-direction:column;gap:10px}
+.ppiw{width:100%}
+.ppiw img{width:100%;height:auto;display:block}
+.ppiph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;background:rgba(0,151,151,.05)}
+.ppiph span{font-size:7.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dm)}
+.ppcr{margin-top:26px;padding-top:18px;border-top:1px solid var(--ln);font-size:12px;color:var(--md);line-height:2.1}
+/* ABOUT */
+.aw{max-width:1020px;margin:0 auto;padding:48px 48px 90px}
+.actp{display:grid;grid-template-columns:168px 1fr 260px;gap:32px;padding-bottom:36px;border-bottom:1px solid var(--ln);margin-bottom:36px;align-items:start}
+.acl{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0}
+.acmid{display:flex;flex-direction:column;padding-top:2px}
+.pfbx{width:168px;height:205px;overflow:hidden;margin-bottom:14px}
+.pfph{width:100%;height:100%;background:linear-gradient(160deg,rgba(0,151,151,.07),rgba(0,151,151,.14));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.pfph svg{opacity:.25;color:var(--tl)}
+.pfph span{font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:var(--dm)}
+.acnm{font-family:var(--sf);font-size:18px;font-weight:300;color:var(--gy);margin-bottom:2px}
+.acrl{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tl);margin-bottom:14px}
+.acbio{font-size:12.5px;line-height:1.82;color:var(--md)}
+.acbio p{margin-bottom:9px}
+.acbio p:last-child{margin-bottom:0}
+
+.acr{display:flex;flex-direction:column;padding-top:2px;border-left:1px solid var(--ln);padding-left:28px}
+.acey{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--tl);margin-bottom:16px}
+.achd{font-family:var(--sf);font-size:clamp(22px,2.8vw,38px);font-weight:300;line-height:1.05;letter-spacing:-.02em;color:var(--gy);margin-bottom:16px}
+.achd em{color:var(--tl);font-style:italic}
+.acav{font-size:13.5px;line-height:1.84;color:var(--md);border-left:2px solid var(--tl);padding-left:18px;margin-bottom:26px}
+.acav p{margin-bottom:5px}
+.acav ul{list-style:none;margin:6px 0}
+.acav ul li{padding:2px 0 2px 16px;position:relative;font-size:13px;color:var(--md)}
+.acav ul li::before{content:"—";position:absolute;left:0;top:2px;color:var(--tl);font-size:10px;line-height:1.7}
+.ebtn{display:inline-flex;align-items:center;gap:9px;background:var(--gy);color:var(--cr);text-decoration:none;padding:10px 20px;font-family:var(--ss);font-size:8.5px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .3s,gap .3s;white-space:nowrap}
+.ebtn:hover{background:var(--tl);gap:14px}
+.ebtn svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.5}
+/* CV */
+.cvs{margin-bottom:44px}
+.cvl{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--tl);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.cvl::after{content:"";flex:1;height:1px;background:var(--ln)}
+.cvg{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.cvi{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--ln)}
+.cvi:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cvyr{font-size:9.5px;letter-spacing:.09em;color:var(--tl);margin-bottom:4px}
+.cvti{font-family:var(--sf);font-size:15.5px;font-weight:400;color:var(--gy);line-height:1.2;margin-bottom:3px}
+.cvsu{font-size:10.5px;color:var(--md);margin-bottom:5px}
+.cvbo{font-size:12.5px;color:var(--md);line-height:1.77}
+.skg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.sk{padding:10px 12px;background:rgba(0,0,0,.03);font-size:11px;color:var(--gy);border:1px solid rgba(0,0,0,.1);transition:background .22s,border-color .22s}
+.sk:hover{background:rgba(0,151,151,.08);border-color:var(--tl)}
+.lgi{margin-bottom:12px}
+.lgrow{display:flex;justify-content:space-between;margin-bottom:4px}
+.lgnm{font-size:12.5px;color:var(--gy)}
+.lglv{font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--tl)}
+.lgbar{height:1px;background:var(--ln);position:relative}
+.lgfi{position:absolute;left:0;top:0;bottom:0;background:var(--tl);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+@media(max-width:1100px){.pgrid{grid-template-columns:1fr}}
+@media(max-width:900px){
+  :root{--sb:0px}
+  html,body{overflow:auto;height:auto}
+  #sb{position:fixed;top:0;left:0;right:0;bottom:auto;width:100%;height:50px;flex-direction:row;align-items:center;padding:0 14px;border-right:none;border-bottom:1px solid var(--ln);overflow-x:auto}
+  .nlogo{margin-bottom:0;margin-right:14px;flex-shrink:0}
+  .nlogo img{height:73px}
+  .nlist{flex-direction:row;overflow-x:auto}
+  .nsep{display:none}
+  .lbtn{margin-top:0;margin-left:8px;flex-shrink:0;padding:5px 10px}
+  #main{margin-left:0;width:100%;height:auto;overflow:visible}
+  #hero{grid-template-columns:1fr}
+  .hl{display:none}
+  .hr{padding:72px 20px 56px;background:none}
+  .actp{grid-template-columns:1fr;gap:24px}
+  .acr{border-left:none;padding-left:0}
+  .cvg{grid-template-columns:1fr;gap:0}
+  .skg{grid-template-columns:1fr 1fr}
+  .pp{width:100vw}
+  .pptop,.ppbd{padding-left:16px;padding-right:16px}
+  .ppig{grid-template-columns:1fr}
+  .cath,.sband,.secft,.aw{padding-left:20px;padding-right:20px}
+}
+@media(max-width:600px){.wm{font-size:70px}.skg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="crn"></div>
+<div class="pov" id="pov" onclick="cpop()"></div>
+<div class="pp" id="pp">
+  <div class="pptop"><span class="ppnum" id="ppnum">01/08</span><button class="ppx" onclick="cpop()">&times;</button></div>
+  <div class="pphi" id="pphi"></div>
+  <div class="ppbd">
+    <div class="ppmt"><span class="ppyr" id="ppyr"></span><span class="pprl" id="pprl"></span></div>
+    <div class="ppti" id="ppti"></div>
+    <div class="ppsu" id="ppsu"></div>
+    <div class="pptgs" id="pptgs"></div>
+    <div class="ppin" id="ppin"></div>
+    <div class="ppde" id="ppde"></div>
+    <div class="ppil" id="ppil">Project Images</div>
+    <div class="ppig" id="ppig"></div>
+    <div class="ppcr" id="ppcr"></div>
+  </div>
+</div>
+<nav id="sb">
+  <a href="#hero" class="nlogo"><img src="yihuizhu-portfolio/assets/images/homepage/yihui-logo.svg" alt="Yihui Zhu"/></a>
+  <ul class="nlist">
+    <li><a href="#s-sys" class="nl" id="nl1">Systems &amp; Interfaces</a></li>
+    <li><a href="#s-vis" class="nl" id="nl2">Visual Communication</a></li>
+    <li><a href="#s-nar" class="nl" id="nl3">Personal Narratives</a></li>
+    <div class="nsep"></div>
+    <li><a href="#s-ac" class="nl" id="nl4">About &amp; Contact</a></li>
+  </ul>
+  <button class="lbtn" id="lbtn" onclick="tgl()"><span class="ldot"></span><span id="llbl">中文</span></button>
+</nav>
+<div id="main">
+<section id="hero">
+  <div class="hl">
+    <div class="wm"><span class="e">Design · Narrative · Systems</span><span class="h">设计 · 叙事 · 系统</span></div>
+  </div>
+  <div class="hr">
+    <p class="hey">Portfolio &mdash; 2026</p>
+    <h1 class="hnm"><span class="e">Yihui<br><em>Zhu</em></span><span class="h blk">朱<em>艺卉</em></span></h1>
+    <p class="htg"><span class="e">Author Designer</span><span class="h">视觉叙事设计师</span></p>
+    <p class="hin sf-tx"><span class="e">I am an author–designer working between visual storytelling and structured design systems. My work ranges from data interfaces and brand identities to illustrated narratives and independent publications. I believe design is both a way to organize information and a way to express ideas.</span><span class="h">我是一名视觉叙事设计师，在视觉叙事与结构化设计之间进行创作。我的实践涵盖数据界面、品牌视觉系统、插画叙事以及独立出版项目。在我看来，设计既是一种组织信息的方法，也是一种表达思想的语言。</span></p>
+    <div class="hsc"><span><span class="e">Scroll to explore</span><span class="h">滚动浏览</span></span><div class="hsl"></div></div>
+  </div>
+</section>
+<section id="s-sys">
+  <div class="cath">
+    <span class="cat-ey">Category 01</span>
+    <h2 class="cat-ti">Systems &amp; <em>Interfaces</em></h2>
+    <span class="cat-ct"><span class="e">3 projects</span><span class="h">3 个项目</span></span>
+  </div>
+  <div class="sband"><p class="sband-t sf-tx"><span class="e">This section presents my work in interface design and digital systems. These projects focus on information clarity, interaction structure, and data communication. I approach interface design not only as visual arrangement, but as a process of shaping how information is understood.</span><span class="h">这一部分展示我的界面设计与数字系统相关项目。这些项目关注信息的清晰表达、交互结构以及数据沟通方式。对我来说，界面设计不仅是视觉布局，更是一种组织信息与建立理解路径的过程。</span></p></div>
+  <div class="pgrid">
+    <div class="card" onclick="openP(0)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/seabox/seabox-dashboard-mockup.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">01</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Seabox Data Platform</span><span class="h">东方金信数据平台</span></div>
+        <div class="csub"><span class="e">Corporate Data Platform Website</span><span class="h">企业数据平台网站设计</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Web Design</span><span class="h">网站设计</span></span><span class="ctag"><span class="e">Data Visualization</span><span class="h">数据可视化</span></span><span class="ctag"><span class="e">Research & Strategy</span><span class="h">调研与策略</span></span></div>
+      </div>
+    </div>
+    <div class="card" onclick="openP(1)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/attune/attune-mockup-01.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">02</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Attune</span><span class="h">Attune</span></div>
+        <div class="csub"><span class="e">Adaptive Mental Health Check-in App</span><span class="h">自适应心理健康自查应用</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">UI Design</span><span class="h">用户界面设计</span></span><span class="ctag"><span class="e">Interaction Design</span><span class="h">交互设计</span></span><span class="ctag"><span class="e">Concept Design</span><span class="h">概念设计</span></span></div>
+      </div>
+    </div>
+    <div class="card" onclick="openP(2)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/data-dashboard/Data-Visualization-Daxing-platform.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">07</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Big Data Dashboard</span><span class="h">大数据驾驶舱</span></div>
+        <div class="csub"><span class="e">Enterprise Data Visualization</span><span class="h">企业级数据可视化仪表盘</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Dashboard Design</span><span class="h">仪表盘设计</span></span><span class="ctag"><span class="e">Data Visualization</span><span class="h">数据可视化</span></span><span class="ctag"><span class="e">UI Design</span><span class="h">用户界面设计</span></span></div>
+      </div>
+    </div>
+    <div class="card-ph"></div>
+  </div>
+  <footer class="secft"><span class="ftsig">Yihui Zhu &mdash; <em>Author Designer</em></span><span>&copy; 2026</span></footer>
+</section>
+<section id="s-vis">
+  <div class="cath">
+    <span class="cat-ey">Category 02</span>
+    <h2 class="cat-ti">Visual <em>Communication</em></h2>
+    <span class="cat-ct"><span class="e">3 projects</span><span class="h">3 个项目</span></span>
+  </div>
+  <div class="sband"><p class="sband-t sf-tx"><span class="e">This section includes branding, visual identity systems, and graphic design projects. These works explore how visual language can communicate ideas clearly while maintaining a distinctive aesthetic character.</span><span class="h">这一部分包括品牌视觉系统、平面设计以及视觉语言相关项目。这些作品探索视觉设计如何在清晰传达信息的同时保持独特的审美表达。</span></p></div>
+  <div class="pgrid">
+    <div class="card" onclick="openP(3)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/corporate-branding/Identity-Poster-2.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">08</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Corporate Branding Projects</span><span class="h">品牌形象设计</span></div>
+        <div class="csub"><span class="e">Brand Systems & Marketing Materials</span><span class="h">品牌体系与营销物料</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Brand Identity</span><span class="h">品牌标识</span></span><span class="ctag"><span class="e">Graphic Design</span><span class="h">平面设计</span></span><span class="ctag"><span class="e">Marketing Materials</span><span class="h">营销物料</span></span></div>
+      </div>
+    </div>
+    <div class="card" onclick="openP(4)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/her-metaphor-lab-studio/Her-Metaphor-Lab Studio-sign.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">04</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Her Metaphor Lab Studio</span><span class="h">Her Metaphor Lab Studio</span></div>
+        <div class="csub"><span class="e">Brand Identity and Illustration</span><span class="h">品牌视觉识别系统</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Brand Identity</span><span class="h">品牌形象</span></span><span class="ctag"><span class="e">Illustration</span><span class="h">插画</span></span><span class="ctag"><span class="e">Visual Language</span><span class="h">视觉语言</span></span></div>
+      </div>
+    </div>
+    <div class="card" onclick="openP(5)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/personal-logo/Personal-Business-Cards.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">05</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Personal Logo Exploration</span><span class="h">个人标志探索</span></div>
+        <div class="csub"><span class="e">Typography-based Identity</span><span class="h">基于字体设计的品牌形象</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Logo Design</span><span class="h">标志设计</span></span><span class="ctag"><span class="e">Typography</span><span class="h">字体设计</span></span><span class="ctag"><span class="e">Identity</span><span class="h">品牌形象</span></span></div>
+      </div>
+    </div>
+    <div class="card-ph"></div>
+  </div>
+  <footer class="secft"><span class="ftsig">Yihui Zhu &mdash; <em>Author Designer</em></span><span>&copy; 2026</span></footer>
+</section>
+<section id="s-nar">
+  <div class="cath">
+    <span class="cat-ey">Category 03</span>
+    <h2 class="cat-ti">Personal <em>Narratives</em></h2>
+    <span class="cat-ct"><span class="e">2 projects</span><span class="h">2 个项目</span></span>
+  </div>
+  <div class="sband"><p class="sband-t sf-tx"><span class="e">Personal projects allow me to explore ideas that extend beyond commercial design. Through illustration, zines, and visual research, I reflect on identity, memory, and everyday life.</span><span class="h">个人项目是我探索设计之外思想的重要方式。通过插画、独立出版与视觉研究，我尝试讨论身份、记忆以及日常生活中的情感经验。</span></p></div>
+  <div class="pgrid">
+    <div class="card" onclick="openP(6)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/still-becoming/Still-Becoming-cover.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">03</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Still Becoming</span><span class="h">Still Becoming</span></div>
+        <div class="csub"><span class="e">A Zine on Identity and Emotional Uncertainty</span><span class="h">关于身份与成长不确定性的视觉出版物</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Zine</span><span class="h">爱好者杂志</span></span><span class="ctag"><span class="e">Visual Research</span><span class="h">视觉研究</span></span><span class="ctag"><span class="e">Interview</span><span class="h">采访</span></span></div>
+      </div>
+    </div>
+    <div class="card" onclick="openP(7)">
+      <div class="cimg"><img src="yihuizhu-portfolio/assets/images/projects/beijing-illustration-series/Drum-Tower.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cph"><span>Add image</span></div></div>
+      <div class="cinf">
+        <div class="ctop"><span class="cnum">06</span><span class="carr">&#8594;</span></div>
+        <div class="ctit"><span class="e">Beijing Illustration Series</span><span class="h">北京插画系列</span></div>
+        <div class="csub"><span class="e">Urban Visual Journal</span><span class="h">城市视觉日记</span></div>
+        <div class="ctags"><span class="ctag"><span class="e">Illustration</span><span class="h">插画</span></span><span class="ctag"><span class="e">Visual Journal</span><span class="h">视觉日记</span></span><span class="ctag"><span class="e">Urban Culture</span><span class="h">城市文化</span></span></div>
+      </div>
+    </div>
+  </div>
+  <footer class="secft"><span class="ftsig">Yihui Zhu &mdash; <em>Author Designer</em></span><span>&copy; 2026</span></footer>
+</section>
+<section id="s-ac">
+<div class="aw">
+  <div class="actp">
+    <!-- col 1: photo + name + role -->
+    <div class="acl">
+      <div class="pfbx"><img src="yihuizhu-portfolio/assets/images/about/yihui-profile.jpg" alt="Yihui Zhu" style="width:100%;height:100%;object-fit:cover;object-position:center top;" onerror="this.parentElement.innerHTML='<div class=pfph><svg width=36 height=36 viewBox=&quot;0 0 24 24&quot; fill=none stroke=currentColor stroke-width=1><path d=&quot;M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2&quot;/><circle cx=12 cy=7 r=4/></svg><span>Profile photo</span></div>'"/></div>
+      <div class="acnm"><span class="e">Yihui Zhu</span><span class="h">朱艺卉</span></div>
+      <div class="acrl"><span class="e">Author Designer</span><span class="h">视觉叙事设计师</span></div>
+    </div>
+    <!-- col 2: bio -->
+    <div class="acmid">
+      <p class="acey"><span class="e">About</span><span class="h">关于我</span></p>
+      <div class="acbio">
+        <p><span class="e">Hi, I'm Yihui.</span><span class="h">你好，我是艺卉。</span></p>
+        <p><span class="e">I graduated from the Academy of Fine Arts and have several years of experience in design, including corporate branding, website design, and data product interfaces.</span><span class="h">我毕业于鲁迅美术学院，拥有多年的设计经验，曾参与企业品牌系统、网站设计以及数据产品界面等项目。</span></p>
+        <p><span class="e">My practice moves between structured design work and independent visual storytelling.</span><span class="h">我的实践在系统化设计与个人视觉叙事之间展开。</span></p>
+        <p><span class="e">Alongside commercial projects, I continue to develop personal work through illustration and publishing.</span><span class="h">在商业设计之外，我也持续进行插画与出版创作。</span></p>
+        <p><span class="e">I enjoy design that balances clarity with playfulness.</span><span class="h">我喜欢在清晰结构与自由表达之间寻找平衡，让设计既精致又带有一点有趣的气质。</span></p>
+      </div>
+    </div>
+    <!-- col 3: contact -->
+    <div class="acr">
+      <p class="acey">Contact</p>
+      <h2 class="achd">Let&rsquo;s make<br>something<br><em>together.</em></h2>
+      <div class="acav">
+        <p><span class="e">I am available for freelance collaborations in:</span><span class="h">目前我提供以下方向的自由职业合作：</span></p>
+        <ul>
+          <li><span class="e">Brand identity</span><span class="h">品牌视觉设计</span></li>
+          <li><span class="e">Website design</span><span class="h">网站设计</span></li>
+          <li><span class="e">Interface design</span><span class="h">界面设计</span></li>
+          <li><span class="e">Illustration</span><span class="h">插画创作</span></li>
+        </ul>
+        <p><span class="e">Currently working remotely and open to international projects.</span><span class="h">我可以远程参与异地项目合作。</span></p>
+      </div>
+      <a href="mailto:iam.yihui@gmail.com" class="ebtn">
+        <span><span class="e">Write to me</span><span class="h">发邮件</span></span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="cvs">
+    <div class="cvl"><span class="e">Work Experience</span><span class="h">工作经历</span></div>
+    <div class="cvg">
+      <div>
+        <div class="cvi"><div class="cvyr">2024 &mdash; Present</div><div class="cvti"><span class="e">Independent Practice</span><span class="h">独立设计师</span></div><div class="cvsu"><span class="e">Freelance Designer & Illustrator</span><span class="h">自由设计师与插画师</span></div><div class="cvbo"><span class="e">Working as a freelance designer and illustrator, developing projects across interface design, branding systems, and visual storytelling.</span><span class="h">作为自由设计师和插画师，从事界面设计、品牌体系及视觉叙事等领域的项目开发。</span></div></div>
+        <div class="cvi"><div class="cvyr">2019 &mdash; 2024</div><div class="cvti"><span class="e">Beijing Eastern Jin Technology</span><span class="h">北京东方金信科技</span></div><div class="cvsu"></div><div class="cvbo"><span class="e">Designed and launched a corporate website by analysing user needs, optimising user flows, and translating company’s purposes into coherent service experiences, increasing website visitors. Led design processes for digital platforms, data storytelling dashboards within technical and business constraints.</span><span class="h">通过分析用户需求、优化用户流程，并将公司宗旨转化为连贯的服务体验，设计并上线了企业官网，有效提升了网站访问量。在技术和业务限制条件下，主导了数字平台及数据叙事仪表盘的设计流程。</span></div></div>
+      </div>
+      <div>
+        <div class="cvi"><div class="cvyr"><span class="e">Education</span><span class="h">教育背景</span></div><div class="cvti"><span class="e">BA Sculpture</span><span class="h">雕塑学士</span></div><div class="cvsu"><span class="e">Academy of Fine Arts - 2014</span><span class="h">鲁迅美术学院 -2014</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cvs">
+    <div class="cvl"><span class="e">Skills & Tools</span><span class="h">技能与工具</span></div>
+    <div class="skg">
+      <div class="sk"><span class="e">UI Design</span><span class="h">用户界面设计</span></div>
+      <div class="sk"><span class="e">Data Visualization</span><span class="h">数据可视化</span></div>
+      <div class="sk"><span class="e">Brand Identity</span><span class="h">品牌形象设计</span></div>
+      <div class="sk"><span class="e">Illustration</span><span class="h">插画</span></div>
+      <div class="sk"><span class="e">Editorial Design</span><span class="h">版式设计</span></div>
+      <div class="sk"><span class="e">Visual Narratives</span><span class="h">视觉叙事</span></div>
+      <div class="sk">Figma</div><div class="sk">Adobe Softwares</div><div class="sk">Procreate</div>
+      <div class="sk">ChatGPT</div><div class="sk">Claude</div><div class="sk">Midjourney</div>
+    </div>
+  </div>
+  <div class="cvs">
+    <div class="cvl"><span class="e">Languages</span><span class="h">语言</span></div>
+    <div style="max-width:370px">
+      <div class="lgi"><div class="lgrow"><span class="lgnm">&#20013;&#25991; / Chinese</span><span class="lglv"><span class="e">Native</span><span class="h">母语</span></span></div><div class="lgbar"><div class="lgfi" data-w="1"></div></div></div>
+      <div class="lgi"><div class="lgrow"><span class="lgnm">English</span><span class="lglv"><span class="e">Professional Working Proficiency</span><span class="h">IELTS-7</span></span></div><div class="lgbar"><div class="lgfi" data-w="0.9"></div></div></div>
+    </div>
+  </div>
+</div>
+<footer class="secft"><span class="ftsig">Yihui Zhu &mdash; <em>Author Designer</em></span><span>&copy; 2026 All rights reserved</span></footer>
+</section>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var CC=document.getElementById("cur"),CR=document.getElementById("crn"),mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;CC.style.left=mx+"px";CC.style.top=my+"px";});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;CR.style.left=rx+"px";CR.style.top=ry+"px";requestAnimationFrame(lp);})();
+document.querySelectorAll("a,button,.card,.sk,.ppx,.ebtn").forEach(function(el){
+  el.addEventListener("mouseenter",function(){document.body.classList.add("hov");});
+  el.addEventListener("mouseleave",function(){document.body.classList.remove("hov");});
+});
+
+/* SCROLL SPY — highlight nav as user scrolls */
+var secs=["hero","s-sys","s-vis","s-nar","s-ac"],nls=[null,"nl1","nl2","nl3","nl4"];
+function setNav(id){
+  nls.forEach(function(n){if(n)document.getElementById(n).classList.remove("act");});
+  var idx=secs.indexOf(id);
+  if(idx>0)document.getElementById(nls[idx]).classList.add("act");
+}
+var spy=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting)setNav(e.target.id);});
+},{threshold:0.3,root:document.getElementById("main")});
+secs.forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el);});
+
+/* SMOOTH SCROLL — nav links */
+document.querySelectorAll("a[href^='#']").forEach(function(a){
+  a.addEventListener("click",function(ev){
+    ev.preventDefault();
+    var id=this.getAttribute("href").slice(1);
+    var el=document.getElementById(id);
+    if(el){
+      var main=document.getElementById("main");
+      if(main&&main.scrollTo){main.scrollTo({top:el.offsetTop,behavior:"smooth"});}
+      else if(el.scrollIntoView){el.scrollIntoView({behavior:"smooth"});}
+    }
+  });
+});
+
+/* LANGUAGE TOGGLE — pure CSS, zero JS string work */
+function tgl(){
+  document.body.classList.toggle("zh");
+  var z=document.body.classList.contains("zh");
+  document.getElementById("llbl").textContent=z?"EN":"\u4e2d\u6587";
+  if(curPop>=0)rp(curPop);
+}
+
+/* LANGUAGE BAR ANIMATION — trigger when about section scrolls into view */
+var lgDone=false;
+new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting&&!lgDone){
+      lgDone=true;
+      document.querySelectorAll(".lgfi").forEach(function(f){
+        f.style.width=(parseFloat(f.getAttribute("data-w"))*100)+"%";
+        requestAnimationFrame(function(){f.style.transform="scaleX(1)";});
+      });
+    }
+  });
+},{threshold:0.2,root:document.getElementById("main")}).observe(document.getElementById("s-ac"));
+
+/* POPUP */
+var PD=[{n:"01",yr:"2023",img:"yihuizhu-portfolio/assets/images/projects/seabox/seabox-dashboard-mockup.jpg",d1:"yihuizhu-portfolio/assets/images/projects/seabox/seabox-dashboard-prototype.jpg",d2:"yihuizhu-portfolio/assets/images/projects/seabox/seabox-dashboard-whole-page.jpg",te:"Seabox Data Platform",tz:"\u4e1c\u65b9\u91d1\u4fe1\u6570\u636e\u5e73\u53f0",se:"Corporate Data Platform Website",sz:"\u4f01\u4e1a\u6570\u636e\u5e73\u53f0\u7f51\u7ad9\u8bbe\u8ba1",tge:["Web Design","Data Visualization","Research & Strategy"],tgz:["\u7f51\u7ad9\u8bbe\u8ba1","\u6570\u636e\u53ef\u89c6\u5316","\u8c03\u7814\u4e0e\u7b56\u7565"],re:"Visual Designer",rz:"\u89c6\u89c9\u8bbe\u8ba1\u5e08",ie:"Designing clarity for complex data systems.",iz:"\u5efa\u7acb\u89c6\u89c9\u89c4\u8303\u4f7f\u7528\u6237\u7406\u89e3\u590d\u6742\u7684\u6570\u636e\u7cfb\u7edf\u3002",de:"Seabox is a data platform focused on enterprise analytics and data infrastructure. In this project I worked on the website redesign, focusing on improving information architecture, user navigation flow, and visual hierarchy. The goal was to translate complex technical services into a clear and accessible digital experience. The final interface presents data-related services through structured layouts and consistent visual language.",dz:"Seabox \u662f\u4e00\u5bb6\u4e13\u6ce8\u4e8e\u4f01\u4e1a\u7ea7\u6570\u636e\u5206\u6790\u4e0e\u6570\u636e\u57fa\u7840\u8bbe\u65bd\u7684\u5e73\u53f0\u3002\u5728\u8be5\u9879\u76ee\u4e2d\uff0c\u6211\u53c2\u4e0e\u4e86\u5b98\u7f51\u7684\u6574\u4f53\u89c6\u89c9\u8bbe\u8ba1\u4e0e\u4fe1\u606f\u7ed3\u6784\u4f18\u5316\uff0c\u901a\u8fc7\u91cd\u65b0\u68b3\u7406\u4fe1\u606f\u67b6\u6784\u4e0e\u7528\u6237\u6d4f\u89c8\u8def\u5f84\uff0c\u4f7f\u590d\u6742\u7684\u6570\u636e\u670d\u52a1\u80fd\u591f\u4ee5\u66f4\u52a0\u6e05\u6670\u76f4\u89c2\u7684\u65b9\u5f0f\u5448\u73b0\u3002\u6700\u7ec8\u7684\u7f51\u7ad9\u5728\u4fdd\u6301\u6280\u672f\u4e13\u4e1a\u6027\u7684\u540c\u65f6\uff0c\u4e5f\u63d0\u5347\u4e86\u6574\u4f53\u53ef\u8bfb\u6027\u4e0e\u7528\u6237\u4f53\u9a8c\u3002",ce:"Role: Visual Designer / Client: Seabox Data / Year: 2023",cz:"\u89d2\u8272\uff1a\u89c6\u89c9\u8bbe\u8ba1\u5e08 / \u5ba2\u6237\uff1a\u4e1c\u65b9\u91d1\u4fe1\u79d1\u6280\u80a1\u4efd\u6709\u9650\u516c\u53f8 / \u5e74\u4efd\uff1a2023"},
+{n:"02",yr:"2026",img:"yihuizhu-portfolio/assets/images/projects/attune/attune-mockup-01.jpg",d1:"yihuizhu-portfolio/assets/images/projects/attune/attune-mockup-02.jpg",d2:"yihuizhu-portfolio/assets/images/projects/attune/attune-mockup-03.jpg",te:"Attune",tz:"Attune",se:"Adaptive Mental Health Check-in App",sz:"\u81ea\u9002\u5e94\u5fc3\u7406\u5065\u5eb7\u81ea\u67e5\u5e94\u7528",tge:["UI Design","Interaction Design","Concept Design"],tgz:["\u7528\u6237\u754c\u9762\u8bbe\u8ba1","\u4ea4\u4e92\u8bbe\u8ba1","\u6982\u5ff5\u8bbe\u8ba1"],re:"UI Designer",rz:"UI \u8bbe\u8ba1\u5e08",ie:"An interface that responds to emotional context rather than fixed interaction patterns.",iz:"\u4e00\u79cd\u80fd\u591f\u54cd\u5e94\u60c5\u611f\u8bed\u5883\u800c\u975e\u56fa\u5b9a\u4ea4\u4e92\u6a21\u5f0f\u7684\u754c\u9762\u3002",de:"Attune explores how digital products might adapt to users mental states rather than requiring users to adapt to rigid systems. The interface dynamically adjusts layout density, interaction prompts, and visual tone depending on stress signals and available time. The project investigates how adaptive interfaces could support emotional well-being while reducing information overload.",dz:"\"Attune\" \u63a2\u7d22\u4e86\u6570\u5b57\u4ea7\u54c1\u5982\u4f55\u9002\u5e94\u7528\u6237\u7684\u5fc3\u7406\u72b6\u6001\uff0c\u800c\u975e\u8981\u6c42\u7528\u6237\u53bb\u9002\u5e94\u50f5\u5316\u7684\u7cfb\u7edf\u3002\u8be5\u754c\u9762\u4f1a\u6839\u636e\u7528\u6237\u7684\u538b\u529b\u4fe1\u53f7\u548c\u53ef\u7528\u65f6\u95f4\uff0c\u52a8\u6001\u8c03\u6574\u5e03\u5c40\u5bc6\u5ea6\u3001\u4ea4\u4e92\u63d0\u793a\u4ee5\u53ca\u89c6\u89c9\u98ce\u683c\u3002\u8be5\u9879\u76ee\u65e8\u5728\u7814\u7a76\u81ea\u9002\u5e94\u754c\u9762\u5982\u4f55\u5728\u51cf\u8f7b\u4fe1\u606f\u8fc7\u8f7d\u7684\u540c\u65f6\uff0c\u652f\u6301\u7528\u6237\u7684\u60c5\u7eea\u5065\u5eb7\u3002",ce:"Role: UI Designer / Year: 2026",cz:"\u89d2\u8272\uff1aUI \u8bbe\u8ba1\u5e08 / \u5e74\u4efd\uff1a2026"},
+{n:"07",yr:"2021",img:"yihuizhu-portfolio/assets/images/projects/data-dashboard/Data-Visualization-Daxing-platform.jpg",d1:"yihuizhu-portfolio/assets/images/projects/data-dashboard/Data-Visualization-Pucheng-platform.jpg",d2:"yihuizhu-portfolio/assets/images/projects/data-dashboard/Data-Visualization-Data-Asset Management-Dashboard.jpg",te:"Big Data Dashboard",tz:"\u5927\u6570\u636e\u9a7e\u9a76\u8231",se:"Enterprise Data Visualization",sz:"\u4f01\u4e1a\u7ea7\u6570\u636e\u53ef\u89c6\u5316\u4eea\u8868\u76d8",tge:["Dashboard Design","Data Visualization","UI Design"],tgz:["\u4eea\u8868\u76d8\u8bbe\u8ba1","\u6570\u636e\u53ef\u89c6\u5316","\u7528\u6237\u754c\u9762\u8bbe\u8ba1"],re:"UI Designer",rz:"UI \u8bbe\u8ba1\u5e08",ie:"A dashboard interface translating large datasets into structured visual insights.",iz:"\u901a\u8fc7\u53ef\u89c6\u5316\u754c\u9762\u5c06\u590d\u6742\u7684\u5927\u89c4\u6a21\u6570\u636e\u8f6c\u5316\u4e3a\u7ed3\u6784\u5316\u4fe1\u606f\u3002",de:"This project focused on designing an internal dashboard for enterprise data monitoring. The design prioritized readability, hierarchy, and quick interpretation of large datasets. Charts, indicators, and layout systems were developed to support real-time decision making.",dz:"\u8be5\u9879\u76ee\u4e3a\u4f01\u4e1a\u5185\u90e8\u6570\u636e\u76d1\u6d4b\u7cfb\u7edf\u8bbe\u8ba1\u4eea\u8868\u76d8\u754c\u9762\u3002\u8bbe\u8ba1\u91cd\u70b9\u5728\u4e8e\u63d0\u5347\u6570\u636e\u7684\u53ef\u8bfb\u6027\u4e0e\u5c42\u7ea7\u7ed3\u6784\uff0c\u901a\u8fc7\u56fe\u8868\u3001\u6307\u6807\u548c\u5e03\u5c40\u7cfb\u7edf\uff0c\u4f7f\u7528\u6237\u80fd\u591f\u5feb\u901f\u7406\u89e3\u5b9e\u65f6\u6570\u636e\u5e76\u8f85\u52a9\u51b3\u7b56\u3002",ce:"Role: UI Designer / Year: 2021",cz:"\u89d2\u8272\uff1aUI \u8bbe\u8ba1\u5e08 / \u5e74\u4efd\uff1a2021"},
+{n:"08",yr:"2023",img:"yihuizhu-portfolio/assets/images/projects/corporate-branding/Identity-Poster-2.jpg",d1:"yihuizhu-portfolio/assets/images/projects/corporate-branding/Identity-Poster-1.jpg",d2:"yihuizhu-portfolio/assets/images/projects/corporate-branding/Identity-Poster-3.jpg",te:"Corporate Branding Projects",tz:"\u54c1\u724c\u5f62\u8c61\u8bbe\u8ba1",se:"Brand Systems & Marketing Materials",sz:"\u54c1\u724c\u4f53\u7cfb\u4e0e\u8425\u9500\u7269\u6599",tge:["Brand Identity","Graphic Design","Marketing Materials"],tgz:["\u54c1\u724c\u6807\u8bc6","\u5e73\u9762\u8bbe\u8ba1","\u8425\u9500\u7269\u6599"],re:"Brand Designer",rz:"\u54c1\u724c\u8bbe\u8ba1\u5e08",ie:"Visual systems and marketing materials designed to maintain consistent brand communication across platforms.",iz:"\u65e8\u5728\u786e\u4fdd\u8de8\u5e73\u53f0\u54c1\u724c\u4f20\u64ad\u4e00\u81f4\u6027\u7684\u89c6\u89c9\u4f53\u7cfb\u4e0e\u8425\u9500\u7269\u6599\u3002",de:"Visual systems and marketing materials designed to maintain consistent brand communication across platforms.",dz:"\u65e8\u5728\u786e\u4fdd\u8de8\u5e73\u53f0\u54c1\u724c\u4f20\u64ad\u4e00\u81f4\u6027\u7684\u89c6\u89c9\u4f53\u7cfb\u4e0e\u8425\u9500\u7269\u6599\u3002",ce:"Role: Brand Designer / Year: 2023",cz:"\u89d2\u8272\uff1a\u54c1\u724c\u8bbe\u8ba1\u5e08 / \u5e74\u4efd\uff1a2023"},
+{n:"04",yr:"2024",img:"yihuizhu-portfolio/assets/images/projects/her-metaphor-lab-studio/Her-Metaphor-Lab Studio-sign.jpg",d1:"yihuizhu-portfolio/assets/images/projects/her-metaphor-lab-studio/Her-Metaphor-Lab Studio-Stickers.jpg",d2:"yihuizhu-portfolio/assets/images/projects/her-metaphor-lab-studio/Her-Metaphor-Lab Studio-Stickers-Tote-Bag.jpg",te:"Her Metaphor Lab Studio",tz:"Her Metaphor Lab Studio",se:"Brand Identity and Illustration",sz:"\u54c1\u724c\u89c6\u89c9\u8bc6\u522b\u7cfb\u7edf",tge:["Brand Identity","Illustration","Visual Language"],tgz:["\u54c1\u724c\u5f62\u8c61","\u63d2\u753b","\u89c6\u89c9\u8bed\u8a00"],re:"Brand Designer",rz:"\u54c1\u724c\u8bbe\u8ba1\u5e08",ie:"Building a visual language that balances artistic freedom and structured identity.",iz:"\u6784\u5efa\u4e00\u79cd\u5728\u827a\u672f\u81ea\u7531\u4e0e\u7ed3\u6784\u5316\u54c1\u724c\u5f62\u8c61\u4e4b\u95f4\u53d6\u5f97\u5e73\u8861\u7684\u89c6\u89c9\u8bed\u8a00\u3002",de:"This project focused on developing a visual identity for a creative studio. The system combines typography, illustration, and flexible layout structures to create a playful yet structured brand language. The design allows the brand to adapt across digital and print media.",dz:"\u8be5\u9879\u76ee\u4e3a\u4e00\u5bb6\u521b\u610f\u5de5\u4f5c\u5ba4\u5efa\u7acb\u54c1\u724c\u89c6\u89c9\u7cfb\u7edf\u3002\u8bbe\u8ba1\u7ed3\u5408\u5b57\u4f53\u3001\u63d2\u753b\u4ee5\u53ca\u7075\u6d3b\u7684\u7248\u5f0f\u7ed3\u6784\uff0c\u5f62\u6210\u65e2\u5177\u6709\u827a\u672f\u6c14\u8d28\u53c8\u4fdd\u6301\u79e9\u5e8f\u611f\u7684\u89c6\u89c9\u8bed\u8a00\u3002\u8be5\u7cfb\u7edf\u80fd\u591f\u5728\u6570\u5b57\u5a92\u4ecb\u4e0e\u5370\u5237\u5a92\u4ecb\u4e4b\u95f4\u7075\u6d3b\u5e94\u7528\u3002",ce:"Role: Brand Designer / Year: 2024",cz:"\u89d2\u8272\uff1a\u54c1\u724c\u8bbe\u8ba1\u5e08 / \u5e74\u4efd\uff1a2024"},
+{n:"05",yr:"2024",img:"yihuizhu-portfolio/assets/images/projects/personal-logo/Personal-Business-Cards.jpg",d1:"yihuizhu-portfolio/assets/images/projects/personal-logo/Personal-Logo-Laying-Label.jpg",d2:"yihuizhu-portfolio/assets/images/projects/personal-logo/Personal-letterhead.jpg",te:"Personal Logo Exploration",tz:"\u4e2a\u4eba\u6807\u5fd7\u63a2\u7d22",se:"Typography-based Identity",sz:"\u57fa\u4e8e\u5b57\u4f53\u8bbe\u8ba1\u7684\u54c1\u724c\u5f62\u8c61",tge:["Logo Design","Typography","Identity"],tgz:["\u6807\u5fd7\u8bbe\u8ba1","\u5b57\u4f53\u8bbe\u8ba1","\u54c1\u724c\u5f62\u8c61"],re:"Designer",rz:"\u8bbe\u8ba1\u5e08",ie:"A typographic exploration aimed at creating a distinctive personal signature.",iz:"\u4e00\u9879\u65e8\u5728\u6253\u9020\u72ec\u7279\u4e2a\u4eba\u98ce\u683c\u7684\u6392\u7248\u63a2\u7d22\u3002",de:"A typographic exploration aimed at creating a distinctive personal signature.",dz:"\u4e00\u9879\u65e8\u5728\u6253\u9020\u72ec\u7279\u4e2a\u4eba\u98ce\u683c\u7684\u6392\u7248\u63a2\u7d22\u3002",ce:"Role: Designer / Year: 2024",cz:"\u89d2\u8272\uff1a\u8bbe\u8ba1\u5e08 / \u5e74\u4efd\uff1a2024"},
+{n:"03",yr:"2025",img:"yihuizhu-portfolio/assets/images/projects/still-becoming/Still-Becoming-cover.jpg",d1:"yihuizhu-portfolio/assets/images/projects/still-becoming/Still-Becoming-pages-1.jpg",d2:"yihuizhu-portfolio/assets/images/projects/still-becoming/Still-Becoming-pages-2.jpg",d3:"yihuizhu-portfolio/assets/images/projects/still-becoming/Still-Becoming-bottom.jpg",te:"Still Becoming",tz:"Still Becoming",se:"A Zine on Identity and Emotional Uncertainty",sz:"\u5173\u4e8e\u8eab\u4efd\u4e0e\u6210\u957f\u4e0d\u786e\u5b9a\u6027\u7684\u89c6\u89c9\u51fa\u7248\u7269",tge:["Zine","Visual Research","Interview"],tgz:["\u7231\u597d\u8005\u6742\u5fd7","\u89c6\u89c9\u7814\u7a76","\u91c7\u8bbf"],re:"Interviewer / Designer / Publisher",rz:"\u91c7\u8bbf\u8005\u3001\u8bbe\u8ba1\u5e08\u3001\u51fa\u7248\u4eba",ie:"An exploration of the fragile moment between who we were and who we are becoming.",iz:"\u5bf9\u66fe\u7ecf\u7684\u81ea\u5df1\u4e0e\u6b63\u5728\u6210\u4e3a\u7684\u81ea\u5df1\u4e4b\u95f4\u90a3\u6bb5\u654f\u611f\u9636\u6bb5\u7684\u63a2\u7d22\u3002",de:"Still Becoming started as a series of interviews about emotional uncertainty among young adults. Fragments of these conversations were translated into visual compositions combining typography, photography, and illustration. The publication forms a shared narrative about the process of becoming.",dz:"Still Becoming \u6700\u521d\u6e90\u4e8e\u4e00\u7cfb\u5217\u5173\u4e8e\u9752\u5e74\u60c5\u7eea\u4e0d\u786e\u5b9a\u6027\u7684\u8bbf\u8c08\u3002\u8fd9\u4e9b\u5bf9\u8bdd\u7684\u7247\u6bb5\u88ab\u8f6c\u5316\u4e3a\u89c6\u89c9\u5185\u5bb9\uff0c\u901a\u8fc7\u6587\u5b57\u3001\u56fe\u50cf\u4e0e\u6392\u7248\u5f62\u6210\u4e00\u79cd\u788e\u7247\u5316\u53d9\u4e8b\u3002\u6700\u7ec8\u7684\u51fa\u7248\u7269\u6784\u6210\u4e86\u4e00\u79cd\u5173\u4e8e\u6210\u4e3a\u7684\u5171\u540c\u53d9\u4e8b\u3002",ce:"Role: Interviewer/Designer/Publisher / Year: 2025 / Pages: 44 / Format: Zine",cz:"\u89d2\u8272\uff1a\u91c7\u8bbf\u8005\u3001\u8bbe\u8ba1\u5e08\u3001\u51fa\u7248\u4eba / \u5e74\u4efd\uff1a2025 / \u9875\u6570\uff1a44 / \u683c\u5f0f\uff1a\u7231\u597d\u8005\u6742\u5fd7"},
+{n:"06",yr:"2021",img:"yihuizhu-portfolio/assets/images/projects/beijing-illustration-series/Drum-Tower.jpg",d1:"yihuizhu-portfolio/assets/images/projects/beijing-illustration-series/Evening-Dance.jpg",d2:"yihuizhu-portfolio/assets/images/projects/beijing-illustration-series/Narrow-Alley.jpg",d3:"yihuizhu-portfolio/assets/images/projects/beijing-illustration-series/Tanghulu.jpg",te:"Beijing Illustration Series",tz:"\u5317\u4eac\u63d2\u753b\u7cfb\u5217",se:"Urban Visual Journal",sz:"\u57ce\u5e02\u89c6\u89c9\u65e5\u8bb0",tge:["Illustration","Visual Journal","Urban Culture"],tgz:["\u63d2\u753b","\u89c6\u89c9\u65e5\u8bb0","\u57ce\u5e02\u6587\u5316"],re:"Illustrator",rz:"\u63d2\u753b\u5e08",ie:"A series of illustrations capturing daily life in Beijing hutong neighborhoods.",iz:"\u4e00\u7cfb\u5217\u63cf\u7ed8\u5317\u4eac\u80e1\u540c\u793e\u533a\u65e5\u5e38\u751f\u6d3b\u7684\u63d2\u753b\u4f5c\u54c1\u3002",de:"A series of illustrations capturing daily life in Beijing hutong neighborhoods.",dz:"\u4e00\u7cfb\u5217\u63cf\u7ed8\u5317\u4eac\u80e1\u540c\u793e\u533a\u65e5\u5e38\u751f\u6d3b\u7684\u63d2\u753b\u4f5c\u54c1\u3002",ce:"Role: Illustrator / Year: 2021",cz:"\u89d2\u8272\uff1a\u63d2\u753b\u5e08 / \u5e74\u4efd\uff1a2021"}];
+
+var curPop=-1;
+function rp(i){
+  var p=PD[i],zh=document.body.classList.contains("zh");
+  document.getElementById("ppnum").textContent=p.n+" / 08";
+  document.getElementById("ppyr").textContent=p.yr;
+  document.getElementById("pprl").textContent=zh?p.rz:p.re;
+  document.getElementById("ppti").textContent=zh?p.tz:p.te;
+  document.getElementById("ppsu").textContent=zh?p.sz:p.se;
+  var tgs=zh?p.tgz:p.tge;
+  document.getElementById("pptgs").innerHTML=tgs.map(function(x){return"<span class=\"pptg\">"+x+"</span>";}).join("");
+  document.getElementById("ppin").textContent=zh?p.iz:p.ie;
+  document.getElementById("ppde").textContent=zh?p.dz:p.de;
+  document.getElementById("ppil").textContent=zh?"\u9879\u76ee\u56fe\u7247":"Project Images";
+  document.getElementById("ppcr").textContent=zh?p.cz:p.ce;
+}
+function openP(i){
+  curPop=i;rp(i);
+  var p=PD[i],h=document.getElementById("pphi");
+  var im=new Image();
+  im.onload=function(){h.innerHTML='<img src="'+p.img+'" alt=""/>';};
+  im.onerror=function(){h.innerHTML='<div class="pphiph"><span>Add image</span></div>';};
+  im.src=p.img;
+  var ig=document.getElementById("ppig");ig.innerHTML="";
+  [p.d1,p.d2,p.d3,p.d4].filter(Boolean).forEach(function(src){
+    var w=document.createElement("div");w.className="ppiw";
+    var i2=new Image();
+    i2.onload=function(){w.innerHTML='<img src="'+src+'" alt=""/>';};
+    i2.onerror=function(){w.innerHTML='<div class="ppiph"><span>Add image</span></div>';};
+    i2.src=src;ig.appendChild(w);
+  });
+  document.getElementById("pov").classList.add("on");
+  document.getElementById("pp").classList.add("on");
+  document.getElementById("main").style.overflowY="hidden";
+  document.getElementById("pp").scrollTop=0;
+}
+function cpop(){
+  document.getElementById("pov").classList.remove("on");
+  document.getElementById("pp").classList.remove("on");
+  document.getElementById("main").style.overflowY="scroll";
+  curPop=-1;
+}
+</script>
+</body>
+</html>
