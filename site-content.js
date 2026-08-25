@@ -215,7 +215,7 @@
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/4-camis-craft-studio-branding/camis-craft-studio-cover.jpg",
+        img: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-cover.jpg",
         images: [
           "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-01.jpg",
           "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg",
