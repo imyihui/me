@@ -7,54 +7,337 @@
 
     /* ---- NAVIGATION ---- */
     nav: [
-      { id: "home",  labelEn: "Index",       labelZh: "首页" },
-      { id: "sys",   labelEn: "System",       labelZh: "系统与界面" },
-      { id: "vis",   labelEn: "Visual",       labelZh: "视觉与品牌" },
-      { id: "nar",   labelEn: "Narrative",     labelZh: "个人叙事" },
-      { id: "about", labelEn: "About",        labelZh: "关于" }
+      { id: "work",   labelEn: "Work",         labelZh: "作品" },
+      { id: "frag",   labelEn: "Visual Notes", labelZh: "视觉笔记" },
+      { id: "arch",   labelEn: "Archive",      labelZh: "档案" },
+      { id: "about",  labelEn: "About",        labelZh: "关于" },
+      { id: "design", labelEn: "Design",       labelZh: "设计", quiet: true }
     ],
   
     /* ---- HOMEPAGE ---- */
     home: {
-      eyebrowEn: "Portfolio — 2026",
-      eyebrowZh: "作品集 — 2026",
-      nameEnHtml: "Yihui <em>Zhu</em>",
-      nameZhHtml: "朱<em>艺卉</em>",
-      roleEn: "Author Designer",
-      roleZh: "视觉叙事设计师",
-      bioEn: "From data interfaces and brand identities to illustrated narratives and independent publications.",
-      bioZh: "实践涵盖数据界面、品牌视觉系统、插画叙事与独立出版，关注如何通过视觉语言组织信息、表达观点，并建立具有个人气质的叙事。",
-      defEn: "One who works between visual storytelling and structured design systems — organizing information as a way to express ideas.",
-      defZh: "在视觉叙事与结构化设计系统之间进行创作——通过整理、重组和转译信息，让设计不仅传达内容，也成为表达想法与观察世界的一种方式。",
-      locationEn: "Beijing · Remote",
-      locationZh: "北京<br>·<br>远程"
+      eyebrowEn: "Notes from an evolving practice",
+      eyebrowZh: "一份仍在生长的笔记",
+      nameEnHtml: "Yihui Zhu",
+      nameZhHtml: "朱艺卉",
+      roleEn: "visual artist / author",
+      roleZh: "视觉艺术家 / 作者",
+      statementEn: "I make images, books and visual narratives around the uncertain territory of becoming — questions about adulthood, identity, memory, and the ordinary hours that quietly shape a life.",
+      statementZh: "我的工作围绕「成为」这件不确定的事展开：图像、出版物与视觉叙事，关于长大、身份、记忆，以及那些在日常生活中悄悄塑成一个人的时刻。",
+      bioEn: "Works, images and ongoing inquiries — kept here as a record of looking.",
+      bioZh: "作品、图像与持续进行中的观察——作为一份正在写下去的记录，留在此处。",
+      defEn: "",
+      defZh: "",
+      locationEn: "Dali",
+      locationZh: "大理"
     },
+
+    /* homepage field — pieces from the archive, not a carousel */
+    homeField: [
+      { src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-cover.jpg", id: "still-becoming", w: 210, x: "4%", y: "8%", r: -5 },
+      { src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg", id: "beijing", w: 150, x: "78%", y: "6%", r: 7 },
+      { src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/her-metaphor-branding-cover.jpg", id: "her-metaphor-lab", w: 168, x: "72%", y: "58%", r: -3 },
+      { src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg", id: "amoy", w: 186, x: "8%", y: "62%", r: 4 },
+      { src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg", id: "scenes", w: 128, x: "58%", y: "12%", r: -8 },
+      { src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png", id: "velveteen", w: 120, x: "86%", y: "32%", r: 3 },
+      { src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg", id: "beijing", w: 112, x: "2%", y: "38%", r: 6 },
+      { src: "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-cover.jpg", id: "elderly", w: 100, x: "48%", y: "70%", r: -2 }
+    ],
   
+    /* ---- BODIES OF WORK
+       These four bodies of work are the core of the practice.
+       Each has its own distinct template for how the folio renders.
+       template: editorial | laboratory | diary | narrative
+    ---- */
+    bodies: [
+      {
+        id: "still-becoming",
+        template: "editorial",
+        yearEn: "2025",
+        yearZh: "2025",
+        accentColor: "#C5A882",
+        statementEn: "Whether there is a clear moment that signifies maturity — or whether we are always becoming.",
+        statementZh: "是否真的存在一个明确的瞬间，能够证明我们已经成熟——还是说，我们始终都在成为。",
+        pullQuoteEn: "Are you already grown up — or still becoming?",
+        pullQuoteZh: "你已经长大了吗——还是仍在成为？"
+      },
+      {
+        id: "her-metaphor-lab",
+        template: "laboratory",
+        yearEn: "2025 —",
+        yearZh: "2025 —",
+        accentColor: "#7A9E7E",
+        statementEn: "An ongoing collection of images, stories and metaphors — a visual laboratory where thinking takes the shape of objects.",
+        statementZh: "一组持续生长的图像、故事与隐喻——一个让思考以物件的形状出现的视觉实验室。",
+        pullQuoteEn: "Every metaphor is a small act of translation.",
+        pullQuoteZh: "每一个隐喻都是一次微小的翻译。"
+      },
+      {
+        id: "amoy",
+        template: "diary",
+        yearEn: "2023",
+        yearZh: "2023",
+        accentColor: "#B8956A",
+        statementEn: "A year of daily observations in Xiamen — not a complete city, only the hours that stayed.",
+        statementZh: "在厦门一年的日常观察——不是一座完整的城市，只是留下来的那些时刻。"
+      },
+      {
+        id: "gear",
+        template: "narrative",
+        yearEn: "2025 —",
+        yearZh: "2025 —",
+        accentColor: "#8A7060",
+        statementEn: "A fictional world in progress — characters, machines, drawings, and small speculations on care and the bodies that turn with them.",
+        statementZh: "一个仍在虚构中的世界——人物、机械、手稿，关于照料与随之转动的身体的细碎想象。"
+      }
+    ],
+
     /* ---- SECTIONS (headers only) ---- */
     sections: [
       {
-        id: "sys",
-        titleEnHtml: "System &amp; <em>Interfaces</em>",
-        titleZhHtml: "系统与<em>界面</em>",
-        introEn: "Interfaces and digital systems — 6 projects making complex information feel clear.",
-        introZh: "界面与数字系统，通过信息架构、视觉系统与交互设计，将复杂的信息、数据与工作流程转化为清晰、易于理解和使用的数字体验。"
+        id: "work",
+        titleEnHtml: "Bodies of <em>work</em>",
+        titleZhHtml: "作品<em>系列</em>",
+        introEn: "These works grow from questions about adulthood, identity, memory, relationships, and the ways we make a life of our own. They do not share one style. They share a practice.",
+        introZh: "这些作品从对长大、身份、记忆、关系，以及如何慢慢长成自己的生活的追问中生长出来。它们不必共享同一种风格，它们共享同一种实践。"
       },
       {
-        id: "vis",
-        titleEnHtml: "Visual <em>Communication</em>",
-        titleZhHtml: "视觉<em>传达</em>",
-        introEn: "Brand systems and graphic design — 4 projects with clear ideas and distinct character.",
-        introZh: "品牌系统与平面设计，从视觉识别、插画到艺术指导，关注如何将一个想法转化为具有明确性格、视觉语言和识别度的视觉形象。"
+        id: "frag",
+        titleEnHtml: "Visual Notes",
+        titleZhHtml: "视觉笔记",
+        introEn: "Traces left between larger works — drawings, plates, photographs, publications, objects, and short notes. They do not need to agree with one another.",
+        introZh: "大作品之间留下的痕迹：手稿、单幅、照片、出版物、物件，以及简短的文字。它们不必彼此呼应。"
       },
       {
-        id: "nar",
-        titleEnHtml: "Personal <em>Narrative</em>",
-        titleZhHtml: "个人<em>叙事</em>",
-        introEn: "Zines, illustration, and visual research — 5 projects on identity, memory, and everyday life.",
-        introZh: "独立出版、插画与视觉研究，记录身份、记忆、成长与日常生活中的细小观察，并通过图像、文字与出版形式建立属于自己的叙事方式。"
+        id: "arch",
+        titleEnHtml: "Archive",
+        titleZhHtml: "档案",
+        introEn: "A quiet index of records — year, medium, title. For finding, not selling.",
+        introZh: "一份安静的目录：年份、媒介、标题。用来查找，而不是用来推销。"
+      },
+      {
+        id: "design",
+        titleEnHtml: "Design <em>practice</em>",
+        titleZhHtml: "设计<em>实践</em>",
+        introEn: "Selected design work — interfaces, visual systems, digital products. A parallel practice that sits beside the studio.",
+        introZh: "一组设计实践中的作品：界面、视觉系统与数字产品。作为与工作室并行的另一条线索。"
       }
     ],
   
+    /* ---- FRAGMENT FILTERS ---- */
+    fragFilters: [
+      { id: "all",          labelEn: "All",         labelZh: "全部" },
+      { id: "work",         labelEn: "Work",        labelZh: "作品" },
+      { id: "drawing",      labelEn: "Drawing",     labelZh: "绘画" },
+      { id: "image",        labelEn: "Image",       labelZh: "图像" },
+      { id: "publication",  labelEn: "Publication", labelZh: "出版" },
+      { id: "text",         labelEn: "Text",        labelZh: "文本" },
+      { id: "object",       labelEn: "Object",      labelZh: "物件" },
+      { id: "video",        labelEn: "Video",       labelZh: "影像" }
+    ],
+
+    /* ---- FRAGMENTS
+       Individual visual traces. Edit here; they are not forced into
+       the same size or style. kind: work | drawing | image |
+       publication | text | object | video
+       size: xs | s | m | l | xl | full
+       related: project id in SITE.projects
+    ---- */
+    fragments: [
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg",
+        titleEn: "Evening Dance", titleZh: "傍晚的舞",
+        year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
+        related: "beijing", kind: "drawing", size: "l", r: -1.4
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
+        titleEn: "Amélie", titleZh: "天使爱美丽",
+        year: "2020", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "s", r: 2.1
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png",
+        titleEn: "Velveteen, seated", titleZh: "Velveteen",
+        year: "2020", mediumEn: "Character drawing", mediumZh: "角色手稿",
+        related: "velveteen", kind: "drawing", size: "m", r: -0.8
+      },
+      {
+        kind: "text", size: "m", r: 1.2, year: "2025",
+        titleEn: "Always becoming", titleZh: "仍在成为",
+        mediumEn: "Note", mediumZh: "笔记",
+        related: "still-becoming",
+        textEn: "Whether there is a clear moment that signifies maturity — or whether we are always becoming.",
+        textZh: "是否真的存在一个明确的瞬间，能够证明我们已经成熟——还是说，我们始终都在成为。"
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-01.jpg",
+        titleEn: "Zine spread", titleZh: "Zine 内页",
+        year: "2025", mediumEn: "Offset / zine page", mediumZh: "Zine 内页",
+        related: "still-becoming", kind: "publication", size: "full", r: 0
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
+        titleEn: "Moonrise Kingdom", titleZh: "月升王国",
+        year: "2021", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "xs", r: 3.2
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
+        titleEn: "Tanghulu", titleZh: "糖葫芦",
+        year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
+        related: "beijing", kind: "image", size: "m", r: -2
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Four Foils with Sticker Mockup.png",
+        titleEn: "Foil stickers", titleZh: "贴纸",
+        year: "2025", mediumEn: "Printed object", mediumZh: "印刷物件",
+        related: "her-metaphor-lab", kind: "object", size: "l", r: 1.6
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-001-reseach.png",
+        titleEn: "Research board", titleZh: "研究板",
+        year: "2025", mediumEn: "Study", mediumZh: "研究手稿",
+        related: "still-becoming", kind: "work", size: "xl", r: -0.6
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg",
+        titleEn: "Yarn character", titleZh: "毛线角色",
+        year: "2025", mediumEn: "Illustration", mediumZh: "插画",
+        related: "camis", kind: "drawing", size: "s", r: 1.8
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-01.gif",
+        titleEn: "Archive in motion", titleZh: "活动中的档案",
+        year: "2026", mediumEn: "Screen recording", mediumZh: "屏幕记录",
+        related: "her-metaphor-space", kind: "video", size: "m", r: -1
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg",
+        titleEn: "One Year in Amoy", titleZh: "在厦门的一年",
+        year: "2023", mediumEn: "Photograph / cover", mediumZh: "摄影 / 封面",
+        related: "amoy", kind: "image", size: "l", r: 0.8
+      },
+      {
+        kind: "text", size: "s", r: -1.8, year: "2025",
+        titleEn: "They need not match", titleZh: "不必相同",
+        mediumEn: "Fragment", mediumZh: "文本碎片",
+        related: "her-metaphor-lab",
+        textEn: "The works do not need to look the same. They belong to the same becoming.",
+        textZh: "作品不必长成同一种样子。它们属于同一种正在发生的实践。"
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
+        titleEn: "L'amica geniale", titleZh: "我的天才女友",
+        year: "2022", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "m", r: 2.4
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
+        titleEn: "Interview pages", titleZh: "访谈页",
+        year: "2025", mediumEn: "Zine sequence", mediumZh: "Zine 序列",
+        related: "still-becoming", kind: "publication", size: "l", r: -0.4
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-03.png",
+        titleEn: "Potion bottle", titleZh: "药剂瓶",
+        year: "2020", mediumEn: "Object study", mediumZh: "物件研究",
+        related: "velveteen", kind: "object", size: "xs", r: 2.8
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Narrow-Alley-02.jpg",
+        titleEn: "Narrow Alley", titleZh: "窄巷",
+        year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
+        related: "beijing", kind: "drawing", size: "m", r: -1.2
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/00.jpg",
+        titleEn: "Studio mark", titleZh: "工作室标志",
+        year: "2025", mediumEn: "Identity drawing", mediumZh: "识别手稿",
+        related: "her-metaphor-lab", kind: "work", size: "s", r: 0.6
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg",
+        titleEn: "Living better", titleZh: "好好生活",
+        year: "2025", mediumEn: "Poster", mediumZh: "海报",
+        related: "elderly", kind: "image", size: "full", r: 0
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg",
+        titleEn: "The End of the F***ing World", titleZh: "去他妈的世界",
+        year: "2023", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "s", r: -2.6
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg",
+        titleEn: "Opened journal", titleZh: "打开的日记",
+        year: "2023", mediumEn: "Publication", mediumZh: "出版物",
+        related: "amoy", kind: "publication", size: "xl", r: 1
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-03.jpg",
+        titleEn: "Studio object", titleZh: "工作室物件",
+        year: "2025", mediumEn: "Identity application", mediumZh: "识别应用",
+        related: "camis", kind: "object", size: "m", r: -0.9
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg",
+        titleEn: "Pedicab", titleZh: "三轮车",
+        year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
+        related: "beijing", kind: "image", size: "l", r: 1.4
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-002=prep.png",
+        titleEn: "Prep notes", titleZh: "准备笔记",
+        year: "2025", mediumEn: "Sketch / notes", mediumZh: "草图 / 笔记",
+        related: "still-becoming", kind: "work", size: "m", r: -1.6
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
+        titleEn: "Love Me If You Dare", titleZh: "如果爱请深爱",
+        year: "2021", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "xs", r: 1.1
+      },
+      {
+        kind: "text", size: "l", r: 0.4, year: "2023",
+        titleEn: "Ordinary hours", titleZh: "普通的时刻",
+        mediumEn: "Observation", mediumZh: "观察",
+        related: "amoy",
+        textEn: "A year of daily observations — not a complete city, only the hours that stayed.",
+        textZh: "一年的日常观察——不是一座完整的城市，只是留下来的那些时刻。"
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png",
+        titleEn: "Stage still", titleZh: "舞台静帧",
+        year: "2020", mediumEn: "Scene illustration", mediumZh: "场景插画",
+        related: "velveteen", kind: "drawing", size: "l", r: -0.5
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg",
+        titleEn: "Closing pages", titleZh: "末页",
+        year: "2025", mediumEn: "Zine page", mediumZh: "Zine 内页",
+        related: "still-becoming", kind: "publication", size: "m", r: 1.7
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
+        titleEn: "The Marvelous Mrs. Maisel", titleZh: "了不起的麦瑟尔夫人",
+        year: "2024", mediumEn: "Vector illustration", mediumZh: "矢量插画",
+        related: "scenes", kind: "drawing", size: "s", r: -2.2
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg",
+        titleEn: "Storefront", titleZh: "橱窗",
+        year: "2025", mediumEn: "Photograph of object", mediumZh: "物件摄影",
+        related: "her-metaphor-lab", kind: "object", size: "m", r: 0.3
+      },
+      {
+        src: "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg",
+        titleEn: "Digital cabinet", titleZh: "数字柜橱",
+        year: "2026", mediumEn: "Screenshot", mediumZh: "屏幕截图",
+        related: "her-metaphor-space", kind: "image", size: "s", r: -1.3
+      }
+    ],
+
     /* ---- PROJECTS ----
        Order within each cat determines display sequence.
        Image paths are relative to index.html.       */
@@ -70,21 +353,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/1-seabox/seabox-02.jpg"
         ],
         website: "https://www.seaboxdata.com/",
-        titleEn: "Seaboxdata.com",
+                id: "seabox",
+        group: "design",
+        mediumEn: "Website, visual system",
+        mediumZh: "网站、视觉系统",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Seaboxdata.com",
         titleZh: "Seaboxdata.com",
-        subtitleEn: "Visual Redesign for a Big Data Technology Company",
-        subtitleZh: "大数据科技企业官网的视觉重设计",
-        tagsEn: ["Web Design", "Brand strategy","Design System"],
-        tagsZh: ["网站设计", "品牌战略", "设计系统"],
+        subtitleEn: "A visual study of a big-data corporate site",
+        subtitleZh: "一家大数据公司官网的视觉研究",
+        tagsEn: ["Web Design", "Visual System"],
+        tagsZh: ["网站设计", "视觉系统"],
         year: "2023",
         roleEn: "Visual & UI Designer",
         roleZh: "视觉与 UI 设计师",
-        introEn: "A large-scale visual redesign transforming a dated corporate website into a modern, approachable digital presence for a big data technology company.",
-        introZh: "为大数据科技公司进行的整站视觉重设计，在保留企业技术属性与专业度的基础上，重新梳理品牌视觉语言与网站信息结构，将原本较为陈旧的企业官网转化为更加现代、清晰且具有亲和力的数字体验。",
-        descEn: "A six-month redesign covering the entire website, from visual identity and design systems to information-heavy pages, responsive layouts, illustration direction, and interaction.",
-        descZh: "项目历时六个月，覆盖从视觉识别与设计系统，到复杂信息页面、响应式布局、插画方向与交互设计的完整网站体验。设计过程中重点处理大量技术信息与企业内容之间的层级关系，通过统一的组件、版式和视觉语言，让不同类型的信息能够在同一系统中保持清晰且具有连续性的表达。",
-        creditsEn: "Role: Visual & UI Designer / Team: PM + Designer / Year: 2023",
-        creditsZh: "角色：视觉与 UI 设计师 / 团队：产品经理 + 设计师 / 年份：2023"
+        introEn: "A study in how a dated corporate website could be reorganized — visual language, information structure, and a more approachable digital presence for a big-data technology company.",
+        introZh: "研究一家陈旧的企业官网如何被重新组织——视觉语言、信息结构，以及如何为一家大数据公司建立更具亲和力的数字形象。",
+        descEn: "The work covered the entire website over six months: visual identity, a shared design system, information-heavy pages, responsive layouts, illustration direction, and interaction. I was interested in how dense technical content and corporate voice could coexist with clarity and warmth.",
+        descZh: "历时六个月，覆盖从视觉识别、共享设计系统，到复杂信息页面、响应式布局、插画方向与交互设计的完整网站。我关心的是：在保留企业技术与专业性的同时，能否让信息层级更清晰、视觉语言更具温度。",
+        creditsEn: "Visual & UI design / With a PM + designer / 2023",
+        creditsZh: "视觉与 UI 设计 / 与产品经理 + 设计师合作 / 2023"
       },
   
       {
@@ -95,21 +385,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-02.jpg",
           "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-03.jpg"
         ],
-        titleEn: "Attune",
+                id: "attune",
+        group: "design",
+        mediumEn: "Interface, research",
+        mediumZh: "界面、研究",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Attune",
         titleZh: "Attune",
-        subtitleEn: "Adaptive Mental Health Check-in App",
-        subtitleZh: "面向 Gen Z 的自适应心理健康应用",
-        tagsEn: ["User research", "Interaction Design"],
+        subtitleEn: "An adaptive check-in for daily moods",
+        subtitleZh: "面向日常情绪的自适应应用",
+        tagsEn: ["User research", "Interaction design"],
         tagsZh: ["用户研究", "交互设计"],
         year: "2026",
-        roleEn: "UI / Interaction Designer", 
+        roleEn: "UI / Interaction Designer",
         roleZh: "UI / 交互设计师",
-        introEn: "A playful mental health companion that adapts to emotional states and helps users reconnect with themselves.",
-        introZh: "一个能够根据用户情绪状态进行适应的心理健康伴侣，通过轻松、非说教式的互动方式，帮助用户觉察当下的感受、理解自己的情绪，并重新建立与自身状态的连接。",
-        descEn: "A personal project exploring adaptive interfaces for Gen Z, using a playful mood-wheel interaction instead of treating every emotional state as something that needs to be fixed.",
-        descZh: "基于个人研究的概念项目，探索面向 Gen Z 的自适应心理健康界面。项目关注年轻人日常情绪变化与数字产品之间的关系，通过情绪轮、状态反馈与自适应内容，让用户先识别和理解自己的感受，而不是立即把情绪视为一个需要被解决的问题。界面会根据不同的情绪状态调整内容与互动方式，尝试建立一种更加轻松、具有陪伴感的数字心理健康体验。",
-        creditsEn: "Role: UI / Interaction Designer / Year: 2026",
-        creditsZh: "角色：UI / 交互设计师 / 项目性质：个人概念项目 / 年份：2026"
+        introEn: "An interface that listens to how you feel today — playful rather than diagnostic, slow enough to make room for moods that are not problems to be solved.",
+        introZh: "一个愿意听你今天感受的界面——轻松多于诊断，缓慢到可以为那些不必被解决的情绪留出位置。",
+        descEn: "The work began with a question: what would a mental-health interface look like if it did not treat every emotional state as something to be fixed? I designed an adaptive mood-wheel and feedback system for Gen Z, where the interface shifts its tone and content in response to the user rather than the other way around.",
+        descZh: "工作从一个问题开始：如果心理健康界面不再把每一种情绪都视为需要被解决的东西，它会长什么样？我为 Gen Z 设计了一个自适应的情绪轮与反馈系统，界面跟随用户的感受调整自己的语气与内容，而不是反过来要求用户。",
+        creditsEn: "UI / interaction design / Personal concept project / 2026",
+        creditsZh: "UI / 交互设计 / 个人概念项目 / 2026"
       },
   
       {
@@ -120,21 +417,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-02.jpg",
           "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-03.jpg"
         ],
-        titleEn: "Datahoo",
+                id: "datahoo",
+        group: "design",
+        mediumEn: "Product interface",
+        mediumZh: "产品界面",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Datahoo",
         titleZh: "Datahoo",
-        subtitleEn: "Data Visualization Builder",
-        subtitleZh: "数据可视化构建平台",
+        subtitleEn: "A workspace for building data visualizations",
+        subtitleZh: "用于构建数据可视化的工坊",
         tagsEn: ["UI Design", "Data Visualization"],
         tagsZh: ["UI 设计", "数据可视化"],
         year: "2019",
         roleEn: "UI Designer",
         roleZh: "UI 设计师",
-        introEn: "A data visualization platform designed to bring charts, templates, widgets, APIs, and graphics into one flexible workspace.",
-        introZh: "一个将图表、模板、组件、API 与图形资源整合到同一工作空间的数据可视化平台，为用户提供从数据处理到视觉呈现的一体化创作环境。",
-        descEn: "An early product UI exploration covering the workspace, visualization tools, property controls, marketplace, and supporting interfaces.",
-        descZh: "这是一次较早期的产品界面设计探索，覆盖工作区、可视化工具、属性控制、资源市场及相关页面。设计重点在于建立不同功能之间清晰的操作关系，同时让复杂的数据配置与图形编辑过程保持直观、可控，并通过统一的组件体系维持产品整体的一致性。",
-        creditsEn: "Role: UI Designer / Scope: All Product Interfaces / Year: 2019",
-        creditsZh: "角色：UI 设计师 / 工作范围：产品整体界面设计 / 年份：2019"
+        introEn: "A workspace that gathers charts, templates, widgets, APIs and graphics in one place — an early exploration of how data tools can also feel composed and considered.",
+        introZh: "一个把图表、模板、组件、API 与图形资源放在同一处的工作空间——关于数据工具如何也能被设计得克制与完整的早期探索。",
+        descEn: "The work spanned the workspace, visualization tools, property controls, a marketplace of assets, and the supporting pages around them. I was interested in how dense operations — configuration, editing, inspection — could share one quiet visual system.",
+        descZh: "工作覆盖了工作区、可视化工具、属性面板、资源市场，以及围绕它们的支持页面。我关心的是：高度密集的操作——配置、编辑、检查——如何共享同一套安静的视觉系统。",
+        creditsEn: "UI design / Full product surface / 2019",
+        creditsZh: "UI 设计 / 产品整体界面 / 2019"
       },
   
       {
@@ -145,21 +449,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-02.jpg",
           "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-03.jpg"
         ],
-        titleEn: "Bughook",
+                id: "bughook",
+        group: "design",
+        mediumEn: "Product concept",
+        mediumZh: "产品概念",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Bughook",
         titleZh: "Bughook",
-        subtitleEn: "Bug Tracking Experience",
-        subtitleZh: "Bug 反馈与追踪体验",
+        subtitleEn: "A lighter way to report and track bugs",
+        subtitleZh: "一种更轻量的 Bug 反馈与追踪方式",
         tagsEn: ["UX/UI Design", "Product Design"],
         tagsZh: ["UX/UI 设计", "产品设计"],
         year: "2020",
         roleEn: "UI / Product Designer",
         roleZh: "UI / 产品设计师",
-        introEn: "A proposed international redesign making bug reporting clearer, lighter, and easier for global IT teams.",
-        introZh: "面向海外市场的产品设计探索，重新思考 IT 团队进行 Bug 反馈与追踪时的信息组织方式，让原本偏技术化的工作流程变得更加清晰、轻量，也更容易被不同背景的团队成员理解。",
-        descEn: "The concept redesigned the product experience around a simple reporting workflow, replacing a rigid technical interface with a more approachable international visual language.",
-        descZh: "方案围绕简单直接的反馈流程重新设计产品体验，从问题提交、信息填写到状态追踪重新梳理操作关系，以更开放、易理解的国际化视觉语言替代原有较为固定的技术型界面。设计希望降低第一次使用时的理解成本，同时保持工具所需要的专业性与效率。",
-        creditsEn: "Role: UI / Product Designer / Status: Proposed Concept",
-        creditsZh: "角色：UI / 产品设计师 / 状态：概念方案"
+        introEn: "A concept for international IT teams — how a rigid technical reporting flow could become clearer, lighter, and easier to enter for the first time.",
+        introZh: "面向海外 IT 团队的一个概念——把偏技术、偏固化的反馈流程，变得更清晰、更轻量，也更易于被第一次接触它的人理解。",
+        descEn: "I reorganized the workflow around a simple reporting path — submitting, describing, tracking — and tried a more open, international visual language in place of the dense technical interface that came before.",
+        descZh: "我把工作流围绕一条简单的反馈路径重新组织：提交、描述、追踪；以更开放、更国际化的视觉语言，替换原本密集而技术化的界面。设计关心的是降低第一次使用时的理解成本，同时保留一个工作工具应当具备的专业感与效率。",
+        creditsEn: "UI / product design / Proposed concept",
+        creditsZh: "UI / 产品设计 / 概念方案"
       },
   
       {
@@ -170,21 +481,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-04.jpg",
           "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-05.jpg"
         ],
-        titleEn: "Seaboxdata Development Platform",
+                id: "seabox-platform",
+        group: "design",
+        mediumEn: "B2B interface",
+        mediumZh: "B2B 界面",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Seaboxdata Development Platform",
         titleZh: "Seaboxdata 一站式开发平台",
-        subtitleEn: "One-Stop Data Development Platform",
-        subtitleZh: "一站式数据开发平台",
+        subtitleEn: "A workspace for one-stop data development",
+        subtitleZh: "用于一站式数据开发的工作空间",
         tagsEn: ["B2B Product", "UI Design"],
         tagsZh: ["B2B 产品", "UI 设计"],
         year: "2023",
         roleEn: "UI Designer",
         roleZh: "UI 设计师",
-        introEn: "A B2B development platform bringing research, modeling, development, coding, testing, and deployment into one workspace.",
-        introZh: "一个面向 B2B 场景的数据开发平台，将研究、建模、开发、编码、测试与上线等多个环节整合到同一工作空间中，帮助专业用户在统一的系统内完成复杂的数据工作流程。",
-        descEn: "I designed the dashboard and functional workspaces for a technically complex product, translating dense terminology and workflows into a structured interface system.",
-        descZh: "负责平台 Dashboard 与多个功能工作区的界面设计，将复杂的技术术语、数据关系与开发流程转化为清晰、结构化的界面系统。设计过程中重点处理不同任务之间的层级、状态和操作关系，让高信息密度的专业工具仍然保持良好的可读性与使用效率。",
-        creditsEn: "Role: UI Designer / Product: B2B Development Platform / Year: 2023",
-        creditsZh: "角色：UI 设计师 / 产品：B2B 数据开发平台 / 年份：2023"
+        introEn: "A B2B development workspace where research, modeling, coding, testing and deployment share one system — built for professionals working with dense, technical data.",
+        introZh: "一个让研究、建模、编码、测试与上线共享同一系统的 B2B 开发工作空间——为与高密度技术数据打交道的专业人士而设计。",
+        descEn: "I designed the dashboard and functional workspaces, translating dense terminology and multi-step workflows into a structured interface. The work focused on hierarchy, state, and the relationships between tasks — making a heavy tool feel legible.",
+        descZh: "我负责 Dashboard 与多个功能工作区的界面设计，把高密度的术语与多步骤工作流转译为结构化的界面系统。设计关注层级、状态与不同任务之间的关系——让一件原本沉重的工具仍然保持可读。",
+        creditsEn: "UI design / B2B development platform / 2023",
+        creditsZh: "UI 设计 / B2B 数据开发平台 / 2023"
       },
   
       {
@@ -194,21 +512,28 @@
           "yihuizhu-portfolio/assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Data-Asset Management-Dashboard.jpg",
           "yihuizhu-portfolio/assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Pucheng-platform-cover.jpg"
         ],
-        titleEn: "Data Visualization",
+                id: "dataviz",
+        group: "design",
+        mediumEn: "Data visualization",
+        mediumZh: "数据可视化",
+        layout: "compact",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Data Visualization",
         titleZh: "数据可视化",
-        subtitleEn: "Selected Data Visualization Systems",
-        subtitleZh: "数据可视化设计与信息呈现",
+        subtitleEn: "Selected visualization systems",
+        subtitleZh: "一组可视化设计",
         tagsEn: ["Data Visualization", "Visual Design"],
         tagsZh: ["数据可视化", "视觉设计"],
         year: "2019-2020",
         roleEn: "Visual Designer",
         roleZh: "视觉设计师",
-        introEn: "A selection of data visualization projects exploring alternative ways to make complex information distinctive, readable, and visually engaging.",
-        introZh: "一组数据可视化项目，探索如何以不同的视觉方式呈现复杂信息，在信息准确性与可读性的基础上加入更加鲜明的视觉表达，使数据不仅能够被理解，也能够形成具有识别度的视觉体验。",
-        descEn: "Across different projects and data contexts, I explored customized charts, maps, lists, dashboards, and illustrative visual systems rather than relying on standard visualization patterns.",
-        descZh: "针对不同的数据场景，探索定制化图表、地图、列表、Dashboard 与插画式视觉系统，尝试突破标准化的数据展示方式。设计根据不同信息之间的关系调整视觉层级、比例与编码方式，在保证数据阅读效率的同时，寻找更具有表现力的视觉解决方案。",
-        creditsEn: "Role: Visual Designer / Scope: Data Visualization & Visual Systems",
-        creditsZh: "角色：视觉设计师 / 工作范围：数据可视化与视觉系统"
+        introEn: "A small collection of visualization projects — exploring how complex information can become distinctive and legible without losing its reading.",
+        introZh: "一组关于可视化的尝试——探索复杂信息如何在不失去可读性的前提下，变得更有性格与视觉重量。",
+        descEn: "Across different data contexts — charts, maps, lists, dashboards, illustrative systems — I avoided default patterns. Each piece adjusts hierarchy, proportion and encoding to the relationships inside the data.",
+        descZh: "在不同的数据场景下——图表、地图、列表、Dashboard、插画式系统——我尽量避开默认模板。每一件都根据数据内部的关系重新调整层级、比例与编码方式。",
+        creditsEn: "Visual design / Data visualization & visual systems",
+        creditsZh: "视觉设计 / 数据可视化与视觉系统"
       },
   
       /* ===== VISUAL (5) ===== */
@@ -218,24 +543,31 @@
         img: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-cover.jpg",
         images: [
           "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-03.jpg"
+          "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg"
         ],
-        titleEn: "Cami's Craft Studio",
+                id: "camis",
+        group: "fragment",
+        mediumEn: "Identity, illustration",
+        mediumZh: "视觉识别、插画",
+        layout: "strip",
+        fragSize: "m",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Cami's Craft Studio",
         titleZh: "Cami's Craft Studio",
-        subtitleEn: "Playful Identity for a Crochet Studio",
-        subtitleZh: "钩织工作室的趣味品牌视觉设计",
-        tagsEn: ["Brand Identity", "Logo Design", "Illustration"],
-        tagsZh: ["品牌识别", "Logo 设计", "插画"],
+        subtitleEn: "A visual identity for a crochet studio",
+        subtitleZh: "一个钩织工作室的视觉身份",
+        tagsEn: ["Visual Identity", "Illustration"],
+        tagsZh: ["视觉识别", "插画"],
         year: "2025",
-        roleEn: "Brand Designer / Illustrator",
-        roleZh: "品牌设计师 / 插画师",
-        introEn: "A warm and playful identity inspired by the personality of a crochet artist and the tactile qualities of yarn.",
-        introZh: "一个从钩织创作者的个人特质与毛线的柔软触感出发建立的品牌形象，将手工艺本身的温度、趣味与不规则感转化为视觉语言，形成一个温暖、亲切而具有角色感的品牌身份。",
-        descEn: "I developed the logo around yarn-ball forms and knitted textures, while incorporating the owner's curly hair, large glasses, and expressive eyebrows into a character-based identity.",
-        descZh: "以毛线球的形态与编织纹理为视觉起点，将创作者的卷发、大眼镜和浓眉等个人特征融入角色设计，并进一步发展为 Logo、插画与品牌应用。整体视觉通过手工感与人物特征建立品牌记忆点，让品牌身份与创作者本人产生直接联系。",
-        creditsEn: "Role: Brand Designer / Illustrator / Year: 2025",
-        creditsZh: "角色：品牌设计师 / 插画师 / 年份：2025"
+        roleEn: "Designer / Illustrator",
+        roleZh: "设计师 / 插画师",
+        introEn: "A warm visual identity drawn from the maker herself — her curly hair, her glasses, the texture of yarn — turned into a small character-based world.",
+        introZh: "一个从创作者本人出发的温暖视觉——她的卷发、眼镜、毛线的纹理——被整理成一个小小的、由角色构成的世界。",
+        descEn: "I built the logo from yarn-ball forms and knitted textures, then folded the maker's features into a character that became the studio's face — illustrated across touchpoints, signage and small objects.",
+        descZh: "我从毛线球的形态与编织纹理出发构建 Logo，再把创作者本人的样貌揉进一个角色，让它成为工作室的脸——出现在标识、招牌与小物件上。",
+        creditsEn: "Design & illustration / 2025",
+        creditsZh: "设计与插画 / 2025"
       },
   
       {
@@ -247,21 +579,29 @@
           "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg"
         ],
         website: "https://hermetaphor.space/",
-        titleEn: "Her Metaphor Lab",
+                id: "her-metaphor-lab",
+        group: "work",
+        rank: 2,
+        mediumEn: "Visual practice, publishing",
+        mediumZh: "视觉实践、出版",
+        layout: "spread",
+        placeEn: "Beijing",
+        placeZh: "北京",
+titleEn: "Her Metaphor Lab",
         titleZh: "Her Metaphor Lab",
-        subtitleEn: "Identity for a Personal Visual Practice",
-        subtitleZh: "个人视觉实践的品牌与视觉身份",
-        tagsEn: ["Visual Identity", "Art Direction", "Self-Initiated"],
-        tagsZh: ["视觉识别", "艺术指导", "个人实践"],
+        subtitleEn: "An evolving collection of images, stories and metaphors",
+        subtitleZh: "一个关于图像、故事与隐喻的持续收藏",
+        tagsEn: ["Visual Identity", "Self-Initiated"],
+        tagsZh: ["视觉识别", "个人实践"],
         year: "2025",
         roleEn: "Founder / Visual Designer",
         roleZh: "创作者 / 视觉设计师",
-        introEn: "A personal visual practice exploring contemporary social life through metaphor, illustration, zines, and independent publishing.",
-        introZh: "一个以隐喻、插画、Zine 与独立出版为主要媒介的个人视觉实践，尝试从日常生活与社会观察中提取那些难以直接表达的感受，并将它们转化为具有个人语言的视觉作品。",
-        descEn: "Her Metaphor grew from a desire to question materialistic and consumer-driven ways of living. I develop its visual language through metaphorical illustrations, digital media, publications, and experimental formats.",
-        descZh: "Her Metaphor 源于对物质主义与消费主义生活方式的思考，也是一种对“应该如何生活”的持续追问。我通过隐喻性插画、数字媒介、出版物与实验性形式不断建立和发展这一实践的视觉语言，将抽象的社会观察、个人情绪与日常经验转化为可以被观看、阅读和分享的视觉片段。",
-        creditsEn: "Role: Founder / Visual Designer / Year: 2025",
-        creditsZh: "角色：创作者 / 视觉设计师 / 年份：2025"
+        introEn: "A personal visual laboratory — images, illustrations, zines and small publications — that gathers metaphors for contemporary life.",
+        introZh: "一个个人的视觉实验室——图像、插画、Zine 与小型出版物——收集关于当代生活的隐喻。",
+        descEn: "Her Metaphor began with questions about how we live now — material, consumer, hurried — and whether other ways of seeing could be made visible. I keep developing its visual language through metaphorical illustrations, digital pieces, publications and experimental formats, treating the work itself as a slow, growing archive.",
+        descZh: "Her Metaphor 始于对“我们今天如何生活”的追问——物质的、匆忙的、被消费裹挟的——也关于其他一些观看方式能否被看见。我通过隐喻性插画、数字作品、出版物与实验性的形式慢慢发展它的视觉语言，把这件作品本身当作一个缓慢生长的档案。",
+        creditsEn: "Founded and made by Yihui Zhu / 2025 —",
+        creditsZh: "由朱艺卉发起与创作 / 2025 —"
       },
   
       {
@@ -274,48 +614,67 @@
           "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-04.png",
           "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png"
         ],
-        titleEn: "Velveteen's Secret Potions",
+                id: "velveteen",
+        group: "fragment",
+        mediumEn: "Character, illustration",
+        mediumZh: "角色、插画",
+        layout: "strip",
+        fragSize: "m",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Velveteen's Secret Potions",
         titleZh: "Velveteen's Secret Potions",
-        subtitleEn: "Character Design for an Essential Oil Collection",
-        subtitleZh: "精油系列的角色与场景视觉设计",
-        tagsEn: ["Character Design", "Art Direction", "Commercial Illustration"],
-        tagsZh: ["角色设计", "艺术指导", "商业插画"],
+        subtitleEn: "A small world of character & scene illustrations",
+        subtitleZh: "一组关于角色与场景的插画",
+        tagsEn: ["Character Design", "Illustration"],
+        tagsZh: ["角色设计", "插画"],
         year: "2020",
         roleEn: "Illustrator / Character Designer",
         roleZh: "插画师 / 角色设计师",
-        introEn: "A character-driven visual world created for a collection of essential oils and natural skincare products.",
-        introZh: "为精油与天然护肤产品系列打造的一套角色驱动的视觉世界，通过拟人化的角色、场景与故事建立产品之间的联系，让原本功能性的产品拥有更加鲜明的性格与情绪。",
-        descEn: "I personified six essential oil products as distinct characters and placed them in a fictional Latin-inspired interview show, using each product's color and qualities to develop its personality, appearance, and atmosphere.",
-        descZh: "将六种精油拟人化为具有不同性格的角色，并将它们置于一个虚构的拉丁风格访谈节目中。设计根据每种产品的色彩、功能与气味特质发展人物的性格、外貌与场景氛围，让产品信息通过角色关系和视觉叙事被更加直观地感知。",
-        creditsEn: "Role: Illustrator / Character Designer / Client: Velveteen's Secret Potions / Year: 2019",
-        creditsZh: "角色：插画师 / 角色设计师 / 客户：Velveteen's Secret Potions / 年份：2020"
+        introEn: "A small character world built around a collection of essential oils — six products turned into six people, gathered inside a fictional Latin-inspired talk show.",
+        introZh: "围绕一组精油建立的小角色世界——六件产品变成六个人，围坐在一个虚构的、拉丁风格的对谈节目里。",
+        descEn: "Each character grew from the colour and qualities of one product. I drew their personalities, their looks, and the rooms they inhabit, and let the cast meet in scenes that slowly form a quiet, slightly absurd little narrative.",
+        descZh: "每一种产品的颜色与特质长成了一个人物。我画了她们的性格、外貌，以及各自所在的房间；让她们在画面里相遇，慢慢形成一个安静的、略带荒诞的小叙事。",
+        creditsEn: "Illustration & character design / Client: Velveteen's Secret Potions / 2020",
+        creditsZh: "插画与角色设计 / 客户：Velveteen's Secret Potions / 2020"
       },
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/marvelous-mrs-maisel.jpg",
+        img: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/amilie.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/lamica-geniale.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/love-me-if-you-dare.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/moonrise-kingdom.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3. illustration-movie-series/the-end-of-the-f-world.jpg"
+          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
+          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
+          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
+          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
+          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg"
         ],
-        titleEn: "Scenes in Between",
+                id: "scenes",
+        group: "fragment",
+        explode: true,
+        mediumEn: "Vector illustration",
+        mediumZh: "矢量插画",
+        layout: "strip",
+        fragSize: "s",
+        fragTitlesEn: ["Amélie", "L'amica geniale", "Love Me If You Dare", "Moonrise Kingdom", "The End of the F***ing World"],
+        fragTitlesZh: ["天使爱美丽", "我的天才女友", "如果爱请深爱", "月升王国", "去他妈的世界"],
+        placeEn: "",
+        placeZh: "",
+titleEn: "Scenes in Between",
         titleZh: "电影之间",
-        subtitleEn: "Illustrations Inspired by Cinema",
-        subtitleZh: "从电影场景与角色出发的插画系列",
-        tagsEn: ["Illustration", "Visual Interpretation"],
-        tagsZh: ["插画", "视觉再诠释"],
+        subtitleEn: "Small illustrations, after cinema",
+        subtitleZh: "看完电影之后画的那些小图",
+        tagsEn: ["Illustration"],
+        tagsZh: ["插画"],
         year: "2020-2025",
         roleEn: "Illustrator",
         roleZh: "插画师",
-        introEn: "A series of vector illustrations reinterpreting cinematic moments, characters, and lines through a personal visual language.",
-        introZh: "一组从电影场景、角色与台词出发的矢量插画系列，通过个人的造型、色彩与构图语言重新理解那些留下印象的电影瞬间。",
-        descEn: "Rather than simply recreating movie scenes, I use particular cinematic moments as starting points to explore mood, character, and emotional subtext, leaving space for personal reflection.",
-        descZh: "并非单纯复刻电影画面，而是从特定的电影瞬间出发，重新提取其中的情绪、人物关系与隐藏的叙事线索。通过简化场景、重组构图和调整视觉风格，让原本属于电影的画面转化为一种更加个人化的观看与记忆。",
-        creditsEn: "Role: Illustrator / Medium: Vector Illustration / Year: 2020–2025",
-        creditsZh: "角色：插画师 / 媒介：矢量插画 / 年份：2020–2025"
+        introEn: "A series of vector illustrations drawn after films — small pictures that hold onto a moment, a line, a face, after the screen has gone dark.",
+        introZh: "一组看完电影之后画的矢量插画——把那些留下来的瞬间、台词、面孔收进小小的画面里。",
+        descEn: "I treat specific cinematic moments as starting points rather than subjects to be reproduced — pulling at mood, character and emotional subtext until a personal picture begins to form.",
+        descZh: "我把特定的某个电影瞬间当作起点，而不是要被复刻的对象——顺着情绪、人物关系和画面下方的潜台词慢慢拉，直到一张属于自己的画面出现。",
+        creditsEn: "Vector illustration / 2020–2025",
+        creditsZh: "矢量插画 / 2020–2025"
       },
   
       /* ===== NARRATIVE (5) ===== */
@@ -330,21 +689,29 @@
           "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
           "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg"
         ],
-        titleEn: "Still Becoming",
+                id: "still-becoming",
+        group: "work",
+        rank: 1,
+        mediumEn: "Zine, research, illustration",
+        mediumZh: "Zine、研究、插画",
+        layout: "folio",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Still Becoming",
         titleZh: "Still Becoming",
-        subtitleEn: "A Zine on Identity and Emotional Uncertainty",
-        subtitleZh: "关于身份、成长与情绪不确定性的视觉出版物",
+        subtitleEn: "A zine on identity and the long question of growing up",
+        subtitleZh: "关于身份与成长的、缓慢的提问",
         tagsEn: ["Research", "Visual Narrative", "Zine"],
         tagsZh: ["研究", "视觉叙事", "Zine"],
         year: "2025",
-        roleEn: "Researcher / Art Director / Designer",
-        roleZh: "研究者 / 艺术指导 / 设计师",
-        introEn: "A personal project exploring how young people navigate adulthood, identity, and the pressure of a fixed social script.",
-        introZh: "一个关于年轻人如何面对成年、身份变化与社会既定人生剧本的个人研究与视觉叙事项目，从个人经验与同龄人的真实表达出发，讨论成长过程中持续存在的不确定感。",
-        descEn: "Through conversations with five peers, interviews, illustration, and a 44-page zine, the project asks whether there is a clear moment that signifies maturity—or whether we are always becoming. It seeks to create an open narrative rather than a fixed answer to what life should become.",
-        descZh: "通过与五位同龄人的深入对话、访谈、资料研究、插画与一本 44 页的 Zine，项目追问：是否真的存在一个明确的瞬间，能够证明我们已经成熟、已经成为一个“完整的大人”？还是说，成长本身就是一个持续发生、没有终点的过程。项目没有试图给出关于人生应该如何发展的标准答案，而是将不同的声音、矛盾与不确定感并置在一起，希望创造一个开放的叙事空间，让读者能够在他人的经验中重新看见自己。",
-        creditsEn: "Role: Researcher / Art Director / Designer / Format: A6, 44 pages",
-        creditsZh: "角色：研究者 / 艺术指导 / 设计师 / 形式：A6，44 页"
+        roleEn: "Researcher / Designer",
+        roleZh: "研究者 / 设计师",
+        introEn: "A research-led zine that gathers stories of becoming — quiet interviews with five peers, drawn and printed into a small book about the long question of growing up.",
+        introZh: "一本以研究为主的 Zine——与五位同龄人的安静对谈，被整理、绘制、印刷成一本关于「长大」这件漫长事情的小书。",
+        descEn: "The work began with conversations about adulthood, identity and the social scripts we are handed. I listened, drew, and arranged the voices — alongside research, illustrations and personal notes — into a 44-page zine that does not try to answer the question, but to make room for it.",
+        descZh: "工作从关于成年、身份与社会交给我们的人生剧本的对话开始。我倾听、记录、画下来，再把这些声音与研究、插画、个人笔记一起整理成一本 44 页的 Zine——它不打算给出答案，而是为这个问题留出位置。",
+        creditsEn: "Research, art direction & design / A6, 44 pages / 2025",
+        creditsZh: "研究、艺术指导与设计 / A6，44 页 / 2025"
       },
   
       {
@@ -355,21 +722,29 @@
           "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg"
         ],
         website: "https://hermetaphor.space/",
-        titleEn: "Her Metaphor Lab Studio",
+                id: "her-metaphor-space",
+        group: "work",
+        rank: 5,
+        mediumEn: "Digital archive, web",
+        mediumZh: "数字档案、网站",
+        layout: "spread",
+        placeEn: "",
+        placeZh: "",
+titleEn: "Her Metaphor Lab Studio",
         titleZh: "Her Metaphor Lab Studio",
-        subtitleEn: "An Experimental Digital Archive",
-        subtitleZh: "一个实验性的个人数字档案空间",
-        tagsEn: ["Web Design", "Creative Coding", "Experimental UX"],
-        tagsZh: ["网页设计", "创意编程", "实验性 UX"],
+        subtitleEn: "A non-linear digital archive",
+        subtitleZh: "一个非线性的数字档案",
+        tagsEn: ["Web Design", "Creative Coding"],
+        tagsZh: ["网页设计", "创意编码"],
         year: "2026",
         roleEn: "Designer / Creative Coder",
         roleZh: "设计师 / 创意编码",
-        introEn: "An experimental digital archive for Her Metaphor Lab, turning personal stories and creative fragments into a non-linear space for exploration.",
-        introZh: "Her Metaphor Lab 的实验性数字档案空间，将个人故事、创作过程与零散的视觉片段收集起来，并通过非线性的方式重新组织，使网站更像一个可以漫游和偶然发现的私人档案，而不是传统意义上的作品展示页面。",
-        descEn: "Rather than organizing the archive as a conventional website, I developed a non-linear interaction where visitors randomly discover individual records, similar to drawing a card from a deck. The site was designed and built through vibe coding.",
-        descZh: "不同于传统的网站信息架构，我设计了一种非线性的探索方式，让访客随机发现一条条独立记录，如同从一叠卡牌中抽取一张。内容之间没有被强制安排成固定的阅读顺序，偶然性本身成为浏览体验的一部分。网站从视觉设计到前端实现均通过 vibe coding 完成，并将创意编程作为建立叙事结构的一种设计工具。",
-        creditsEn: "Role: Designer / Creative Coder / Status: Published / Year: 2026",
-        creditsZh: "角色：设计师 / 创意编码 / 状态：已上线 / 年份：2026"
+        introEn: "An experimental archive for Her Metaphor Lab — stories, working notes, and fragments gathered into a space that is meant to be wandered through, not scrolled past.",
+        introZh: "Her Metaphor Lab 的一个实验性档案——故事、工作笔记、视觉片段，被收集进一个更适合漫游、而不是顺序浏览的空间。",
+        descEn: "Instead of pages, the archive works like a deck of cards — each record appears on its own, by chance, the way you might pull a single image from a stack. The site was designed and built through creative coding, with the interaction itself treated as a small piece of writing.",
+        descZh: "档案不像页面那样排列，而更像一叠卡——每一条记录各自出现，被偶然抽到，就像从一摞画里随手抽出一张。网站通过创意编码完成，我把交互本身也当作一段小小的写作。",
+        creditsEn: "Design & creative coding / Published / 2026",
+        creditsZh: "设计与创意编码 / 已上线 / 2026"
       },
   
       {
@@ -381,21 +756,32 @@
           "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
           "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg"
         ],
-        titleEn: "Beijing, Unnoticed",
+                id: "beijing",
+        group: "fragment",
+        explode: true,
+        mediumEn: "Digital painting",
+        mediumZh: "数字绘画",
+        layout: "strip",
+        fragSize: "m",
+        fragTitlesEn: ["Evening Dance", "Narrow Alley", "Tanghulu", "Pedicab"],
+        fragTitlesZh: ["傍晚的舞", "窄巷", "糖葫芦", "三轮车"],
+        placeEn: "Beijing",
+        placeZh: "北京",
+titleEn: "Beijing, Unnoticed",
         titleZh: "北京，被忽略的角落",
-        subtitleEn: "Illustrations of Everyday Beijing",
-        subtitleZh: "关于北京日常生活与城市细节的插画记录",
+        subtitleEn: "Notes on the everyday city",
+        subtitleZh: "关于一座日常城市的笔记",
         tagsEn: ["Illustration", "Visual Diary"],
         tagsZh: ["插画", "视觉记录"],
         year: "2020",
         roleEn: "Illustrator",
         roleZh: "插画师",
-        introEn: "A small series observing ordinary moments and easily overlooked corners of Beijing's hutongs.",
-        introZh: "一组关于北京胡同日常生活的插画记录，关注那些不会出现在城市宣传册中，却构成真实城市经验的普通瞬间与容易被忽略的角落。",
-        descEn: "Created during the pandemic period, the five illustrations focus on simple everyday life rather than iconic landmarks, using textured digital painting to capture a quieter side of the city.",
-        descZh: "创作于疫情时期的五幅插画没有选择北京著名的城市地标，而是将视线放在胡同中的普通生活：街边的人、狭窄的巷道、日常小吃以及城市中缓慢发生的片刻。通过带有手工肌理的数字绘画，记录一个更加安静、私人，也更接近日常经验的北京。",
-        creditsEn: "Role: Illustrator / Medium: Digital Painting / Year: 2021",
-        creditsZh: "角色：插画师 / 媒介：数字绘画 / 年份：2020"
+        introEn: "A small series of paintings made in the hutongs — the people, the alleyways, the snacks, the ordinary hours that make up a quieter Beijing.",
+        introZh: "一组在胡同里画下的小画——人、巷子、吃食，构成一座更安静的北京的那些普通时刻。",
+        descEn: "Drawn during the pandemic, these pictures keep away from landmarks. They look, instead, at the small things that continue to happen — textured digital paintings of a more private, more familiar version of the city.",
+        descZh: "画于疫情期间。这些画不写地标，只是看着仍在继续的小事——用带手感的数字绘画，记录一座更私人、更熟悉的北京。",
+        creditsEn: "Digital painting / 2020",
+        creditsZh: "数字绘画 / 2020"
       },
   
       {
@@ -404,21 +790,29 @@
         images: [
           "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg"
         ],
-        titleEn: "Growing Older, Living Better",
+                id: "elderly",
+        group: "fragment",
+        mediumEn: "Poster, research",
+        mediumZh: "海报、研究",
+        layout: "folio",
+        fragSize: "l",
+        placeEn: "China",
+        placeZh: "中国",
+titleEn: "Growing Older, Living Better",
         titleZh: "老去，也要好好生活",
-        subtitleEn: "A Poster for Elderly Wellbeing",
-        subtitleZh: "关注老年生活质量与社区关怀的社会议题海报",
-        tagsEn: ["Social Design", "Visual Communication"],
-        tagsZh: ["社会设计", "视觉传达"],
+        subtitleEn: "A poster on ageing with care",
+        subtitleZh: "一张关于体面老去的海报",
+        tagsEn: ["Visual Research", "Poster"],
+        tagsZh: ["视觉研究", "海报"],
         year: "2025",
-        roleEn: "Visual Designer / Researcher",
-        roleZh: "视觉设计师 / 研究者",
-        introEn: "A visual communication project advocating for more holistic care of older people's physical, social, and emotional wellbeing.",
-        introZh: "一个倡导更加全面关注老年人身体、社交与情感生活质量的视觉传达项目，尝试从日常生活与社区关系的角度重新理解“老年生活”这一社会议题。",
-        descEn: "Research into ageing in China revealed that emotional and social wellbeing can be overlooked alongside basic physical needs. The poster combines hand-drawn imagery and muted colors to communicate a warmer vision of ageing and community care.",
-        descZh: "对中国老龄化现状的研究让我注意到，在满足基本生活需求之外，老年人的情感关系、社交参与与精神状态常常容易被忽略。海报没有采用强调衰老或疾病的视觉符号，而是通过手绘人物、生活化场景与低饱和色彩建立更加温暖、亲近的视觉语言，希望传达一种关于老去的不同想象：年龄增长并不意味着生活质量必须下降，社区与社会环境同样可以成为支持老年生活的重要部分。",
-        creditsEn: "Role: Visual Designer / Researcher / Context: Program Application / Year: 2025",
-        creditsZh: "角色：视觉设计师 / 研究者 / 项目背景：项目申请 / 年份：2025"
+        roleEn: "Designer / Researcher",
+        roleZh: "设计师 / 研究者",
+        introEn: "A poster that looks at ageing — not as decline, but as a phase of life that asks for warmth, attention and a wider sense of community.",
+        introZh: "一张关于老去的海报——不把它当作衰退，而当作一段需要被温柔对待、也需要被看见的生活。",
+        descEn: "Research into ageing in China made me notice how often emotional and social life are overlooked once basic needs are met. The image avoids the usual symbols of illness or frailty, and tries instead for a quieter, more inhabited picture of growing older.",
+        descZh: "关于老龄化的研究让我注意到，在基本生活被满足之后，老年人的情感与社交状态往往被忽略。我没有使用关于疾病或衰弱的常见视觉符号，而尝试画一张更安静、更有生活痕迹的老去的画面。",
+        creditsEn: "Design & research / 2025",
+        creditsZh: "设计与研究 / 2025"
       },
   
       {
@@ -427,21 +821,58 @@
         images: [
           "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg"
         ],
-        titleEn: "One Year in Amoy",
+                id: "amoy",
+        group: "work",
+        rank: 3,
+        mediumEn: "Zine, photography, illustration",
+        mediumZh: "Zine、摄影、插画",
+        layout: "folio",
+        placeEn: "Xiamen",
+        placeZh: "厦门",
+titleEn: "One Year in Amoy",
         titleZh: "在厦门的一年",
-        subtitleEn: "Personal Visual Journal",
-        subtitleZh: "记录城市生活与个人感受的视觉日记",
+        subtitleEn: "A year-long visual diary",
+        subtitleZh: "一本持续一年的视觉日记",
         tagsEn: ["Zine", "Illustration", "Photography"],
         tagsZh: ["独立杂志", "插画", "摄影"],
         year: "2023",
         roleEn: "Designer / Illustrator",
         roleZh: "设计师 / 插画师",
-        introEn: "A year of daily observations from Xiamen, China.",
-        introZh: "关于在中国厦门生活一年的个人视觉记录，从城市环境、日常活动与生活中的细小瞬间出发，整理一段属于自己的时间与空间记忆。",
-        descEn: "A personal visual journal documenting a year of everyday life in Xiamen through photography, illustration, and type.",
-        descZh: "通过摄影、插画与文字记录在厦门一年的日常生活，将城市街道、居住环境、天气、人物与个人生活中的片段整理成一本视觉日记。项目没有试图完整地描述这座城市，而是通过一系列零散的观察，保存一段具体时间里对厦门的个人感受与记忆。",
-        creditsEn: "Role: Designer / Illustrator / Year: 2023",
-        creditsZh: "角色：设计师 / 插画师 / 形式：个人视觉日记 / 年份：2023"
+        introEn: "A year of looking, in Xiamen — small pictures kept every day, until they made a quiet book about a place and a stretch of time.",
+        introZh: "在厦门的一年里看下来的那些小画——每天记一点，直到它们慢慢长成一本关于一座城市和一段时间的安静的书。",
+        descEn: "A personal diary made of photographs, drawings and small notes about the city — its streets, weather, neighbours, food. The book does not try to describe Xiamen as a whole. It keeps a record of how one year, lived closely, actually felt.",
+        descZh: "一本由照片、绘画与小字组成的私人日记——关于城市的街道、天气、邻居、食物。这本书不打算完整地描述厦门，它只是把一段被仔细度过的时间，如实地留下来。",
+        creditsEn: "Personal visual diary / 2023",
+        creditsZh: "个人视觉日记 / 2023"
+      },
+
+      {
+        cat: "nar",
+        id: "gear",
+        group: "work",
+        rank: 4,
+        img: "",
+        images: [],
+        titleEn: "Her Story of Gear",
+        titleZh: "Her Story of Gear",
+        subtitleEn: "A fictional world in progress",
+        subtitleZh: "一个仍在虚构中的世界",
+        tagsEn: ["Illustration", "Narrative"],
+        tagsZh: ["插画", "叙事"],
+        year: "2025—",
+        roleEn: "Artist",
+        roleZh: "艺术家",
+        mediumEn: "Drawing, image, text",
+        mediumZh: "绘画、图像、文字",
+        layout: "folio",
+        placeEn: "",
+        placeZh: "",
+        introEn: "A small fictional world — characters, machines, drawings — quietly speculating on care, mechanism, and the bodies that turn with them.",
+        introZh: "一个慢慢长出来的小世界——人物、机械、手稿——安静地想象着照料、齿轮，以及与之一起转动的身体。",
+        descEn: "Plates and notes will enter the archive as the work finds its form. For now, this record simply marks the series as part of the practice.",
+        descZh: "画面与笔记会随着作品的成形陆续进入档案。此刻这一条目先在这里占一个位置，标明它属于这份实践。",
+        creditsEn: "In progress",
+        creditsZh: "进行中"
       }
   
     ],
@@ -451,53 +882,53 @@
       photo: "yihuizhu-portfolio/assets/images/about/yihui-profile.png",
       nameEn: "Yihui Zhu",
       nameZh: "朱艺卉",
-      roleEn: "Author Designer",
-      roleZh: "视觉叙事设计师",
+      roleEn: "visual artist / author",
+      roleZh: "视觉艺术家 / 作者",
       bioEn: [
-        "Graduated from the Academy of Fine Arts. I work across branding, interfaces, and visual storytelling.",
-        "Open to remote collaborations."
+        "I am a visual artist and designer working across image-making, visual narratives, publications and digital design.",
+        "My practice moves between personal work — zines, drawings, image archives, ongoing research — and commissioned design for digital products, interfaces and visual systems."
       ],
       bioZh: [
-        "毕业于鲁迅美术学院，拥有视觉艺术与设计背景。我的实践横跨品牌视觉、数字界面、插画与视觉叙事，关注如何通过设计组织信息，并将个人观察转化为具有视觉性与叙事性的作品。",
-        "目前以独立设计与个人创作为主，开放远程及国际项目合作，也欢迎与不同领域的创作者共同探索视觉、出版与数字媒介之间的可能性。"
+        "我是一名视觉艺术家与设计师，工作横跨图像创作、视觉叙事、独立出版与数字设计。",
+        "我的实践由两条线索组成：作为个人项目的图像、Zine、插画与持续进行中的视觉研究；以及作为受委托的设计工作——数字产品、界面与视觉系统。"
       ],
-      contactHeadEnHtml: "Let's make something <em>together.</em>",
-      contactHeadZhHtml: "一起<em>做点什么。</em>",
+      contactHeadEnHtml: "Write, if you like.",
+      contactHeadZhHtml: "若愿意，可以写信。",
       servicesEn: [
-        "Brand identity",
-        "Website design",
-        "Interface design",
-        "Illustration"
+        "Visual identities",
+        "Web & product design",
+        "Illustration",
+        "Visual research & publishing"
       ],
       servicesZh: [
-        "品牌视觉设计",
-        "网站设计",
-        "界面设计",
-        "插画创作"
+        "视觉识别",
+        "网站与产品设计",
+        "插画",
+        "视觉研究与出版"
       ],
       email: "iam.yihui@gmail.com",
       emailBtnEn: "say hi!",
       emailBtnZh: "say hi!",
-      availabilityEn: "Currently working remotely and open to international freelance collaborations.",
-      availabilityZh: "目前以远程方式工作，开放国际自由职业项目与跨领域合作，欢迎品牌、数字产品、视觉叙事及插画相关项目联系。",
+      availabilityEn: "Currently working remotely. Open to commissions, collaborations, and quiet conversations about images.",
+      availabilityZh: "目前以远程方式工作。接受委托，也欢迎就图像、出版与共同创作展开安静的对话。",
       experience: [
         {
           years: "2024 — Present",
-          titleEn: "Independent Practice",
-          titleZh: "独立设计实践",
-          subtitleEn: "Freelance Designer & Illustrator",
-          subtitleZh: "自由设计师与插画师",
-          bodyEn: "Interface design, branding systems, and visual storytelling.",
-          bodyZh: "从事界面设计、品牌视觉体系、插画与视觉叙事等领域的独立项目，同时发展个人出版与视觉研究实践。"
+          titleEn: "Independent practice",
+          titleZh: "独立实践",
+          subtitleEn: "Designer & illustrator",
+          subtitleZh: "设计师与插画师",
+          bodyEn: "Selected design work alongside personal publishing, illustration and ongoing visual research.",
+          bodyZh: "一边承接设计委托，一边进行个人出版、插画与持续的视觉研究。"
         },
         {
           years: "2019 — 2024",
           titleEn: "Beijing Eastern Jin Technology",
           titleZh: "北京东方金信科技",
-          subtitleEn: "",
-          subtitleZh: "",
-          bodyEn: "Corporate website, digital platforms, and data dashboards.",
-          bodyZh: "负责企业官网、数字平台及数据仪表盘等项目的视觉与界面设计，参与复杂信息架构、数据可视化与企业数字产品的设计工作。"
+          subtitleEn: "Visual & interface designer",
+          subtitleZh: "视觉与界面设计师",
+          bodyEn: "Corporate websites, digital platforms, and data dashboards.",
+          bodyZh: "企业官网、数字平台与数据仪表盘。"
         }
       ],
       education: {
@@ -509,11 +940,11 @@
         schoolZh: "鲁迅美术学院 — 2014"
       },
       skillsEn: [
-        "UI Design", "Data Viz", "Brand Identity", "Illustration",
+        "UI Design", "Data Viz", "Visual Identity", "Illustration",
         "Editorial", "Visual Narratives", "Figma", "Adobe", "Procreate"
       ],
       skillsZh: [
-        "界面设计", "数据可视化", "品牌形象", "插画",
+        "界面设计", "数据可视化", "视觉识别", "插画",
         "版式设计", "视觉叙事", "Figma", "Adobe", "Procreate"
       ],
       languages: [
@@ -521,5 +952,5 @@
         { name: "English",       levelEn: "IELTS-7", levelZh: "IELTS-7", width: 0.9 }
       ]
     }
-  
+
   };
