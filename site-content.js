@@ -34,14 +34,14 @@
 
     /* homepage field — pieces from the archive, not a carousel */
     homeField: [
-      { src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-cover.jpg", id: "still-becoming", w: 210, x: "4%", y: "8%", r: -5 },
-      { src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg", id: "beijing", w: 150, x: "78%", y: "6%", r: 7 },
-      { src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/her-metaphor-branding-cover.jpg", id: "her-metaphor-lab", w: 168, x: "72%", y: "58%", r: -3 },
-      { src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg", id: "amoy", w: 186, x: "8%", y: "62%", r: 4 },
-      { src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg", id: "scenes", w: 128, x: "58%", y: "12%", r: -8 },
-      { src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png", id: "velveteen", w: 120, x: "86%", y: "32%", r: 3 },
-      { src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg", id: "beijing", w: 112, x: "2%", y: "38%", r: 6 },
-      { src: "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-cover.jpg", id: "elderly", w: 100, x: "48%", y: "70%", r: -2 }
+      { src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-cover.jpg", id: "still-becoming", w: 210, x: "4%", y: "8%", r: -5 },
+      { src: "assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg", id: "beijing", w: 150, x: "78%", y: "6%", r: 7 },
+      { src: "assets/images/projects/visuals/1.her-metaphor-lab branding/her-metaphor-branding-cover.jpg", id: "her-metaphor-lab", w: 168, x: "72%", y: "58%", r: -3 },
+      { src: "assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg", id: "amoy", w: 186, x: "8%", y: "62%", r: 4 },
+      { src: "assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg", id: "scenes", w: 128, x: "58%", y: "12%", r: -8 },
+      { src: "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png", id: "velveteen", w: 120, x: "86%", y: "32%", r: 3 },
+      { src: "assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg", id: "beijing", w: 112, x: "2%", y: "38%", r: 6 },
+      { src: "assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-cover.jpg", id: "elderly", w: 100, x: "48%", y: "70%", r: -2 }
     ],
   
     /* ---- BODIES OF WORK
@@ -145,19 +145,19 @@
     ---- */
     fragments: [
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg",
+        src: "assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg",
         titleEn: "Evening Dance", titleZh: "傍晚的舞",
         year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
         related: "beijing", kind: "drawing", size: "l", r: -1.4
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
         titleEn: "Amélie", titleZh: "天使爱美丽",
         year: "2020", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "s", r: 2.1
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png",
+        src: "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png",
         titleEn: "Velveteen, seated", titleZh: "Velveteen",
         year: "2020", mediumEn: "Character drawing", mediumZh: "角色手稿",
         related: "velveteen", kind: "drawing", size: "m", r: -0.8
@@ -171,49 +171,49 @@
         textZh: "是否真的存在一个明确的瞬间，能够证明我们已经成熟——还是说，我们始终都在成为。"
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-01.jpg",
+        src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-01.jpg",
         titleEn: "Zine spread", titleZh: "Zine 内页",
         year: "2025", mediumEn: "Offset / zine page", mediumZh: "Zine 内页",
         related: "still-becoming", kind: "publication", size: "full", r: 0
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
         titleEn: "Moonrise Kingdom", titleZh: "月升王国",
         year: "2021", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "xs", r: 3.2
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
+        src: "assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
         titleEn: "Tanghulu", titleZh: "糖葫芦",
         year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
         related: "beijing", kind: "image", size: "m", r: -2
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Four Foils with Sticker Mockup.png",
+        src: "assets/images/projects/visuals/1.her-metaphor-lab branding/Free Four Foils with Sticker Mockup.png",
         titleEn: "Foil stickers", titleZh: "贴纸",
         year: "2025", mediumEn: "Printed object", mediumZh: "印刷物件",
         related: "her-metaphor-lab", kind: "object", size: "l", r: 1.6
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-001-reseach.png",
+        src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-001-reseach.png",
         titleEn: "Research board", titleZh: "研究板",
         year: "2025", mediumEn: "Study", mediumZh: "研究手稿",
         related: "still-becoming", kind: "work", size: "xl", r: -0.6
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg",
+        src: "assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg",
         titleEn: "Yarn character", titleZh: "毛线角色",
         year: "2025", mediumEn: "Illustration", mediumZh: "插画",
         related: "camis", kind: "drawing", size: "s", r: 1.8
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-01.gif",
+        src: "assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-01.gif",
         titleEn: "Archive in motion", titleZh: "活动中的档案",
         year: "2026", mediumEn: "Screen recording", mediumZh: "屏幕记录",
         related: "her-metaphor-space", kind: "video", size: "m", r: -1
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg",
+        src: "assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg",
         titleEn: "One Year in Amoy", titleZh: "在厦门的一年",
         year: "2023", mediumEn: "Photograph / cover", mediumZh: "摄影 / 封面",
         related: "amoy", kind: "image", size: "l", r: 0.8
@@ -227,73 +227,73 @@
         textZh: "作品不必长成同一种样子。它们属于同一种正在发生的实践。"
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
         titleEn: "L'amica geniale", titleZh: "我的天才女友",
         year: "2022", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "m", r: 2.4
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
+        src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
         titleEn: "Interview pages", titleZh: "访谈页",
         year: "2025", mediumEn: "Zine sequence", mediumZh: "Zine 序列",
         related: "still-becoming", kind: "publication", size: "l", r: -0.4
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-03.png",
+        src: "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-03.png",
         titleEn: "Potion bottle", titleZh: "药剂瓶",
         year: "2020", mediumEn: "Object study", mediumZh: "物件研究",
         related: "velveteen", kind: "object", size: "xs", r: 2.8
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Narrow-Alley-02.jpg",
+        src: "assets/images/projects/narrative/3.beijing-illustration-series/Narrow-Alley-02.jpg",
         titleEn: "Narrow Alley", titleZh: "窄巷",
         year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
         related: "beijing", kind: "drawing", size: "m", r: -1.2
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/00.jpg",
+        src: "assets/images/projects/visuals/1.her-metaphor-lab branding/00.jpg",
         titleEn: "Studio mark", titleZh: "工作室标志",
         year: "2025", mediumEn: "Identity drawing", mediumZh: "识别手稿",
         related: "her-metaphor-lab", kind: "work", size: "s", r: 0.6
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg",
+        src: "assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg",
         titleEn: "Living better", titleZh: "好好生活",
         year: "2025", mediumEn: "Poster", mediumZh: "海报",
         related: "elderly", kind: "image", size: "full", r: 0
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg",
         titleEn: "The End of the F***ing World", titleZh: "去他妈的世界",
         year: "2023", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "s", r: -2.6
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg",
+        src: "assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg",
         titleEn: "Opened journal", titleZh: "打开的日记",
         year: "2023", mediumEn: "Publication", mediumZh: "出版物",
         related: "amoy", kind: "publication", size: "xl", r: 1
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-03.jpg",
+        src: "assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-03.jpg",
         titleEn: "Studio object", titleZh: "工作室物件",
         year: "2025", mediumEn: "Identity application", mediumZh: "识别应用",
         related: "camis", kind: "object", size: "m", r: -0.9
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg",
+        src: "assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg",
         titleEn: "Pedicab", titleZh: "三轮车",
         year: "2020", mediumEn: "Digital painting", mediumZh: "数字绘画",
         related: "beijing", kind: "image", size: "l", r: 1.4
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-002=prep.png",
+        src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-002=prep.png",
         titleEn: "Prep notes", titleZh: "准备笔记",
         year: "2025", mediumEn: "Sketch / notes", mediumZh: "草图 / 笔记",
         related: "still-becoming", kind: "work", size: "m", r: -1.6
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
         titleEn: "Love Me If You Dare", titleZh: "如果爱请深爱",
         year: "2021", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "xs", r: 1.1
@@ -307,31 +307,31 @@
         textZh: "一年的日常观察——不是一座完整的城市，只是留下来的那些时刻。"
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png",
+        src: "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png",
         titleEn: "Stage still", titleZh: "舞台静帧",
         year: "2020", mediumEn: "Scene illustration", mediumZh: "场景插画",
         related: "velveteen", kind: "drawing", size: "l", r: -0.5
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg",
+        src: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg",
         titleEn: "Closing pages", titleZh: "末页",
         year: "2025", mediumEn: "Zine page", mediumZh: "Zine 内页",
         related: "still-becoming", kind: "publication", size: "m", r: 1.7
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
+        src: "assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
         titleEn: "The Marvelous Mrs. Maisel", titleZh: "了不起的麦瑟尔夫人",
         year: "2024", mediumEn: "Vector illustration", mediumZh: "矢量插画",
         related: "scenes", kind: "drawing", size: "s", r: -2.2
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg",
+        src: "assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg",
         titleEn: "Storefront", titleZh: "橱窗",
         year: "2025", mediumEn: "Photograph of object", mediumZh: "物件摄影",
         related: "her-metaphor-lab", kind: "object", size: "m", r: 0.3
       },
       {
-        src: "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg",
+        src: "assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg",
         titleEn: "Digital cabinet", titleZh: "数字柜橱",
         year: "2026", mediumEn: "Screenshot", mediumZh: "屏幕截图",
         related: "her-metaphor-space", kind: "image", size: "s", r: -1.3
@@ -347,10 +347,10 @@
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/1-seabox/seabox-cover.jpg",
+        img: "assets/images/projects/system/1-seabox/seabox-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/1-seabox/seabox-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/1-seabox/seabox-02.jpg"
+          "assets/images/projects/system/1-seabox/seabox-01.jpg",
+          "assets/images/projects/system/1-seabox/seabox-02.jpg"
         ],
         website: "https://www.seaboxdata.com/",
                 id: "seabox",
@@ -379,11 +379,11 @@ titleEn: "Seaboxdata.com",
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-cover.jpg",
+        img: "assets/images/projects/system/2-attune/attune-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-01.gif",
-          "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/2-attune/attune-03.jpg"
+          "assets/images/projects/system/2-attune/attune-01.gif",
+          "assets/images/projects/system/2-attune/attune-02.jpg",
+          "assets/images/projects/system/2-attune/attune-03.jpg"
         ],
                 id: "attune",
         group: "design",
@@ -411,11 +411,11 @@ titleEn: "Attune",
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-cover.jpg",
+        img: "assets/images/projects/system/3-datahoo/datahoo-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/3-datahoo/datahoo-03.jpg"
+          "assets/images/projects/system/3-datahoo/datahoo-01.jpg",
+          "assets/images/projects/system/3-datahoo/datahoo-02.jpg",
+          "assets/images/projects/system/3-datahoo/datahoo-03.jpg"
         ],
                 id: "datahoo",
         group: "design",
@@ -443,11 +443,11 @@ titleEn: "Datahoo",
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-cover.jpg",
+        img: "assets/images/projects/system/4-bughook/bughook-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-01.gif",
-          "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/4-bughook/bughook-03.jpg"
+          "assets/images/projects/system/4-bughook/bughook-01.gif",
+          "assets/images/projects/system/4-bughook/bughook-02.jpg",
+          "assets/images/projects/system/4-bughook/bughook-03.jpg"
         ],
                 id: "bughook",
         group: "design",
@@ -475,11 +475,11 @@ titleEn: "Bughook",
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-cover copy.jpg",
+        img: "assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-cover copy.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-03.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-04.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-05.jpg"
+          "assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-03.jpg",
+          "assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-04.jpg",
+          "assets/images/projects/system/5-seabox-platform/One-Stop-Development-Platform-05.jpg"
         ],
                 id: "seabox-platform",
         group: "design",
@@ -507,10 +507,10 @@ titleEn: "Seaboxdata Development Platform",
   
       {
         cat: "sys",
-        img: "yihuizhu-portfolio/assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Data-Asset Management-Dashboard-01.jpg",
+        img: "assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Data-Asset Management-Dashboard-01.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Data-Asset Management-Dashboard.jpg",
-          "yihuizhu-portfolio/assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Pucheng-platform-cover.jpg"
+          "assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Data-Asset Management-Dashboard.jpg",
+          "assets/images/projects/system/6-seaboxdata-dashboard/Data-Visualization-Pucheng-platform-cover.jpg"
         ],
                 id: "dataviz",
         group: "design",
@@ -540,10 +540,10 @@ titleEn: "Data Visualization",
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-cover.jpg",
+        img: "assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg"
+          "assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-01.jpg",
+          "assets/images/projects/visuals/4.camis-craft-studio-branding/camis-craft-studio-02.jpg"
         ],
                 id: "camis",
         group: "fragment",
@@ -572,11 +572,11 @@ titleEn: "Cami's Craft Studio",
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/her-metaphor-branding-cover.jpg",
+        img: "assets/images/projects/visuals/1.her-metaphor-lab branding/her-metaphor-branding-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/00.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Four Foils with Sticker Mockup.png",
-          "yihuizhu-portfolio/assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg"
+          "assets/images/projects/visuals/1.her-metaphor-lab branding/00.jpg",
+          "assets/images/projects/visuals/1.her-metaphor-lab branding/Free Four Foils with Sticker Mockup.png",
+          "assets/images/projects/visuals/1.her-metaphor-lab branding/Free Glass Storefront Mockup.jpg"
         ],
         website: "https://hermetaphor.space/",
                 id: "her-metaphor-lab",
@@ -606,13 +606,13 @@ titleEn: "Her Metaphor Lab",
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-cover.jpg",
+        img: "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png",
-          "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-03.png",
-          "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-04.png",
-          "yihuizhu-portfolio/assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png"
+          "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-01.png",
+          "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-02.jpg",
+          "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-03.png",
+          "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-04.png",
+          "assets/images/projects/visuals/2.Velveteen's Secret Potion/velveteens-secret-potion-05.png"
         ],
                 id: "velveteen",
         group: "fragment",
@@ -641,13 +641,13 @@ titleEn: "Velveteen's Secret Potions",
   
       {
         cat: "vis",
-        img: "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
+        img: "assets/images/projects/visuals/3.illustration-movie-series/marvelous-mrs-maisel.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
-          "yihuizhu-portfolio/assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg"
+          "assets/images/projects/visuals/3.illustration-movie-series/amilie.jpg",
+          "assets/images/projects/visuals/3.illustration-movie-series/lamica-geniale.jpg",
+          "assets/images/projects/visuals/3.illustration-movie-series/love-me-if-you-dare.jpg",
+          "assets/images/projects/visuals/3.illustration-movie-series/moonrise-kingdom.jpg",
+          "assets/images/projects/visuals/3.illustration-movie-series/the-end-of-the-f-world.jpg"
         ],
                 id: "scenes",
         group: "fragment",
@@ -681,13 +681,13 @@ titleEn: "Scenes in Between",
   
       {
         cat: "nar",
-        img: "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-cover.jpg",
+        img: "assets/images/projects/narrative/1.still-becoming/Still-Becoming-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-001-reseach.png",
-          "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-002=prep.png",
-          "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg"
+          "assets/images/projects/narrative/1.still-becoming/Still-Becoming-001-reseach.png",
+          "assets/images/projects/narrative/1.still-becoming/Still-Becoming-002=prep.png",
+          "assets/images/projects/narrative/1.still-becoming/Still-Becoming-01.jpg",
+          "assets/images/projects/narrative/1.still-becoming/Still-Becoming-02.jpg",
+          "assets/images/projects/narrative/1.still-becoming/Still-Becoming-03.jpg"
         ],
                 id: "still-becoming",
         group: "work",
@@ -716,10 +716,10 @@ titleEn: "Still Becoming",
   
       {
         cat: "nar",
-        img: "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-cover.jpg",
+        img: "assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-01.gif",
-          "yihuizhu-portfolio/assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg"
+          "assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-01.gif",
+          "assets/images/projects/narrative/2.her-metaphor-space/her-metaphor-space-02.jpg"
         ],
         website: "https://hermetaphor.space/",
                 id: "her-metaphor-space",
@@ -749,12 +749,12 @@ titleEn: "Her Metaphor Lab Studio",
   
       {
         cat: "nar",
-        img: "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/beijing-illustration-cover.jpg",
+        img: "assets/images/projects/narrative/3.beijing-illustration-series/beijing-illustration-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg",
-          "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Narrow-Alley-02.jpg",
-          "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
-          "yihuizhu-portfolio/assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg"
+          "assets/images/projects/narrative/3.beijing-illustration-series/Evening-Dance-01.jpg",
+          "assets/images/projects/narrative/3.beijing-illustration-series/Narrow-Alley-02.jpg",
+          "assets/images/projects/narrative/3.beijing-illustration-series/Tanghulu-03.jpg",
+          "assets/images/projects/narrative/3.beijing-illustration-series/Pedicab-04.jpg"
         ],
                 id: "beijing",
         group: "fragment",
@@ -786,9 +786,9 @@ titleEn: "Beijing, Unnoticed",
   
       {
         cat: "nar",
-        img: "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-cover.jpg",
+        img: "assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg"
+          "assets/images/projects/narrative/4.elderly-wellbeing-poster/elderly-wellbeing-01.jpg"
         ],
                 id: "elderly",
         group: "fragment",
@@ -817,9 +817,9 @@ titleEn: "Growing Older, Living Better",
   
       {
         cat: "nar",
-        img: "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg",
+        img: "assets/images/projects/narrative/5.one-year-in-amoy/one-year-in-amoy-cover.jpg",
         images: [
-          "yihuizhu-portfolio/assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg"
+          "assets/images/projects/narrative/5.one-year-in-amoy/Open Magazine Mockup.jpg"
         ],
                 id: "amoy",
         group: "work",
@@ -879,7 +879,7 @@ titleEn: "One Year in Amoy",
   
     /* ---- ABOUT PAGE ---- */
     about: {
-      photo: "yihuizhu-portfolio/assets/images/about/yihui-profile.png",
+      photo: "assets/images/about/yihui-profile.png",
       nameEn: "Yihui Zhu",
       nameZh: "朱艺卉",
       roleEn: "visual artist / author",
